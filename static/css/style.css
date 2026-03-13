@@ -1,0 +1,2010 @@
+/* ============================== */
+/* VARIABLES GLOBALES DEL SITIO   */
+/* ============================== */
+:root {
+    /* Azul profundo de marca */
+    --blue: #1E3A8A;
+
+    /* Naranjo principal para CTA */
+    --orange: #FF5A1F;
+
+    /* Verde brillante de apoyo */
+    --green: #22C55E;
+
+    /* Rosa suave decorativo */
+    --pink: #F472B6;
+
+    /* Blanco puro */
+    --white: #FFFFFF;
+
+    /* Fondo base */
+    --bg: #F8FAFC;
+
+    /* Texto principal */
+    --text: #10204f;
+
+    /* Texto secundario */
+    --text-soft: #475569;
+
+    /* Línea suave para bordes */
+    --line: rgba(30, 58, 138, 0.08);
+
+    /* Sombra estándar */
+    --shadow: 0 22px 45px rgba(30, 58, 138, 0.14);
+
+    /* Radios */
+    --radius-lg: 32px;
+    --radius-md: 24px;
+    --radius-sm: 18px;
+
+    /* Transición estándar */
+    --transition: all 0.3s ease;
+}
+
+/* ============================== */
+/* RESET GLOBAL                   */
+/* ============================== */
+* {
+    /* Incluye padding y borde dentro del tamaño total */
+    box-sizing: border-box;
+}
+
+html {
+    /* Activa scroll suave entre anclas */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Elimina márgenes por defecto */
+    margin: 0;
+
+    /* Define la tipografía principal */
+    font-family: "Nunito", sans-serif;
+
+    /* Define color de texto principal */
+    color: var(--text);
+
+    /* Fondo general con degradados suaves */
+    background:
+        radial-gradient(circle at top left, rgba(244, 114, 182, 0.08), transparent 20%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.08), transparent 22%),
+        linear-gradient(180deg, #f7fbff 0%, #ffffff 52%, #f6f9ff 100%);
+
+    /* Evita scroll lateral indeseado */
+    overflow-x: hidden;
+}
+
+img {
+    /* Hace que las imágenes sean responsivas */
+    max-width: 100%;
+
+    /* Elimina espacio en línea */
+    display: block;
+}
+
+a {
+    /* Quita subrayado de links */
+    text-decoration: none;
+
+    /* Hereda color */
+    color: inherit;
+}
+
+button,
+input {
+    /* Hereda fuente del body */
+    font: inherit;
+}
+
+/* ============================== */
+/* CONTENEDORES Y UTILIDADES      */
+/* ============================== */
+.container {
+    /* Define ancho máximo de contenido */
+    width: min(1160px, calc(100% - 2rem));
+
+    /* Centra horizontalmente */
+    margin: 0 auto;
+}
+
+.section {
+    /* Espaciado vertical estándar entre secciones */
+    padding: 92px 0;
+}
+
+.section-heading {
+    /* Centra el texto del encabezado */
+    text-align: center;
+
+    /* Da aire bajo el título */
+    margin-bottom: 44px;
+}
+
+.section-heading h2 {
+    /* Usa fuente display divertida */
+    font-family: "Baloo 2", cursive;
+
+    /* Tamaño responsivo */
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    /* Márgenes */
+    margin: 0 0 12px;
+}
+
+.section-heading p {
+    /* Limita ancho para mejor lectura */
+    max-width: 760px;
+
+    /* Centra */
+    margin: 0 auto;
+
+    /* Color más suave */
+    color: var(--text-soft);
+
+    /* Tamaño legible */
+    font-size: 1.06rem;
+}
+
+.eyebrow {
+    /* Hace que parezca una etiqueta */
+    display: inline-flex;
+
+    /* Espaciado interno */
+    padding: 0.5rem 0.95rem;
+
+    /* Fondo suave */
+    background: rgba(34, 197, 94, 0.12);
+
+    /* Color del texto */
+    color: var(--blue);
+
+    /* Bordes redondeados */
+    border-radius: 999px;
+
+    /* Peso visual */
+    font-weight: 800;
+
+    /* Margen inferior */
+    margin-bottom: 16px;
+}
+
+.eyebrow--light {
+    /* Variante clara para fondos oscuros */
+    background: rgba(255, 255, 255, 0.15);
+
+    /* Texto blanco */
+    color: var(--white);
+}
+
+/* ============================== */
+/* FONDO DECORATIVO               */
+/* ============================== */
+.bg-decor {
+    /* Fija el fondo a la ventana */
+    position: fixed;
+
+    /* Ocupa toda la pantalla */
+    inset: 0;
+
+    /* Va por detrás del contenido */
+    z-index: -1;
+
+    /* No bloquea clics */
+    pointer-events: none;
+}
+
+.blob {
+    /* Posición libre */
+    position: absolute;
+
+    /* Forma circular */
+    border-radius: 50%;
+
+    /* Desenfoque suave */
+    filter: blur(20px);
+
+    /* Opacidad baja */
+    opacity: 0.22;
+}
+
+.blob--1 {
+    /* Tamaño */
+    width: 250px;
+    height: 250px;
+
+    /* Color */
+    background: var(--pink);
+
+    /* Posición */
+    top: 5%;
+    left: -80px;
+}
+
+.blob--2 {
+    /* Tamaño */
+    width: 300px;
+    height: 300px;
+
+    /* Color */
+    background: var(--green);
+
+    /* Posición */
+    top: 12%;
+    right: -90px;
+}
+
+.blob--3 {
+    /* Tamaño */
+    width: 220px;
+    height: 220px;
+
+    /* Color */
+    background: var(--orange);
+
+    /* Posición */
+    bottom: 18%;
+    left: -70px;
+}
+
+.blob--4 {
+    /* Tamaño */
+    width: 240px;
+    height: 240px;
+
+    /* Color */
+    background: var(--blue);
+
+    /* Posición */
+    bottom: 12%;
+    right: -90px;
+}
+
+/* ============================== */
+/* HEADER                         */
+/* ============================== */
+.header {
+    /* Header fijo al hacer scroll */
+    position: sticky;
+
+    /* Pegado arriba */
+    top: 0;
+
+    /* Se mantiene sobre el contenido */
+    z-index: 1000;
+
+    /* Fondo semi-transparente */
+    background: rgba(255, 255, 255, 0.85);
+
+    /* Efecto glassmorphism */
+    backdrop-filter: blur(16px);
+
+    /* Línea inferior sutil */
+    border-bottom: 1px solid var(--line);
+}
+
+.header__inner {
+    /* Layout horizontal */
+    display: flex;
+
+    /* Centra verticalmente */
+    align-items: center;
+
+    /* Separa logo y menú */
+    justify-content: space-between;
+
+    /* Altura mínima */
+    min-height: 82px;
+}
+
+.brand__logo {
+    /* Altura del logo */
+    height: 58px;
+
+    /* Mantiene proporción */
+    width: auto;
+}
+
+.nav {
+    /* Menú en línea */
+    display: flex;
+
+    /* Espacio entre links */
+    gap: 22px;
+
+    /* Centrado vertical */
+    align-items: center;
+}
+
+.nav a {
+    /* Hace más visible el menú */
+    font-weight: 800;
+
+    /* Aplica transición */
+    transition: var(--transition);
+}
+
+.nav a:hover {
+    /* Cambia a naranjo al pasar el mouse */
+    color: var(--orange);
+}
+
+.nav__cta {
+    /* Fondo destacado */
+    background: var(--orange);
+
+    /* Texto blanco */
+    color: var(--white) !important;
+
+    /* Espacio interior */
+    padding: 0.85rem 1.1rem;
+
+    /* Botón redondeado */
+    border-radius: 999px;
+
+    /* Sombra */
+    box-shadow: 0 14px 28px rgba(255, 90, 31, 0.25);
+}
+
+.menu-toggle {
+    /* Oculto en escritorio */
+    display: none;
+
+    /* Columnita */
+    flex-direction: column;
+
+    /* Espacio entre líneas */
+    gap: 5px;
+}
+
+.menu-toggle span {
+    /* Línea del ícono hamburguesa */
+    width: 26px;
+    height: 3px;
+
+    /* Color */
+    background: var(--blue);
+
+    /* Bordes redondeados */
+    border-radius: 999px;
+}
+
+/* ============================== */
+/* BOTONES                        */
+/* ============================== */
+.btn {
+    /* Permite centrar contenido */
+    display: inline-flex;
+
+    /* Centra horizontal */
+    align-items: center;
+    justify-content: center;
+
+    /* Espaciado interno */
+    padding: 1rem 1.35rem;
+
+    /* Botón redondeado */
+    border-radius: 999px;
+
+    /* Peso del texto */
+    font-weight: 800;
+
+    /* Centra texto */
+    text-align: center;
+
+    /* Transición suave */
+    transition: var(--transition);
+
+    /* Sin borde */
+    border: none;
+
+    /* Cursor de botón */
+    cursor: pointer;
+}
+
+.btn:hover {
+    /* Pequeña elevación */
+    transform: translateY(-2px);
+}
+
+.btn--primary {
+    /* Fondo principal CTA */
+    background: linear-gradient(135deg, var(--orange), #ff7a33);
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Sombra */
+    box-shadow: 0 14px 28px rgba(255, 90, 31, 0.3);
+}
+
+.btn--secondary {
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Texto azul */
+    color: var(--blue);
+
+    /* Borde sutil */
+    border: 2px solid rgba(30, 58, 138, 0.08);
+}
+
+.btn--small {
+    /* Botón compacto */
+    padding: 0.85rem 1rem;
+
+    /* Tamaño menor */
+    font-size: 0.95rem;
+
+    /* Fondo azul */
+    background: var(--blue);
+
+    /* Texto blanco */
+    color: var(--white);
+}
+
+.btn--light {
+    /* Fondo claro */
+    background: var(--white);
+
+    /* Texto azul */
+    color: var(--blue);
+}
+
+.btn--white {
+    /* Variante blanca */
+    background: var(--white);
+
+    /* Texto azul */
+    color: var(--blue);
+
+    /* Sombra */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.btn--full {
+    /* Botón ocupa todo el ancho */
+    width: 100%;
+}
+
+.btn:disabled {
+    /* Reduce opacidad si está desactivado */
+    opacity: 0.7;
+
+    /* Cursor visual */
+    cursor: not-allowed;
+}
+
+/* ============================== */
+/* HERO                           */
+/* ============================== */
+.hero {
+    /* Da más aire bajo el header */
+    padding-top: 46px;
+}
+
+.hero__grid {
+    /* Dos columnas */
+    display: grid;
+
+    /* Reparto de espacio */
+    grid-template-columns: 1.05fr 0.95fr;
+
+    /* Espacio entre columnas */
+    gap: 38px;
+
+    /* Centra verticalmente */
+    align-items: center;
+}
+
+.hero__content h1 {
+    /* Fuente display */
+    font-family: "Baloo 2", cursive;
+
+    /* Tamaño fluido */
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    /* Interlineado ajustado */
+    line-height: 0.95;
+
+    /* Márgenes */
+    margin: 0 0 20px;
+}
+
+.hero__subtitle {
+    /* Tamaño del subtítulo */
+    font-size: 1.12rem;
+
+    /* Color secundario */
+    color: var(--text-soft);
+
+    /* Ancho máximo */
+    max-width: 640px;
+
+    /* Margen inferior */
+    margin-bottom: 28px;
+}
+
+.hero__actions {
+    /* Alinea botones */
+    display: flex;
+
+    /* Permite bajar de línea en móvil */
+    flex-wrap: wrap;
+
+    /* Espaciado entre botones */
+    gap: 14px;
+
+    /* Margen inferior */
+    margin-bottom: 28px;
+}
+
+.hero__stats {
+    /* Cuatro columnas */
+    display: grid;
+
+    /* Reparto */
+    grid-template-columns: repeat(4, 1fr);
+
+    /* Gap */
+    gap: 14px;
+}
+
+.stat-card {
+    /* Fondo translúcido */
+    background: rgba(255, 255, 255, 0.86);
+
+    /* Blur suave */
+    backdrop-filter: blur(8px);
+
+    /* Espaciado */
+    padding: 18px;
+
+    /* Bordes */
+    border-radius: var(--radius-sm);
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+
+    /* Línea */
+    border: 1px solid var(--line);
+}
+
+.stat-card strong {
+    /* Hace grande el número */
+    display: block;
+
+    /* Fuente display */
+    font-family: "Baloo 2", cursive;
+
+    /* Tamaño */
+    font-size: 1.8rem;
+
+    /* Color destacado */
+    color: var(--orange);
+}
+
+.stat-card span {
+    /* Texto secundario */
+    color: var(--text-soft);
+
+    /* Peso */
+    font-weight: 700;
+}
+
+.hero-card {
+    /* Necesario para elementos absolutos */
+    position: relative;
+
+    /* Fondo azul degradado */
+    background: linear-gradient(145deg, var(--blue), #3156d0);
+
+    /* Bordes grandes */
+    border-radius: 36px;
+
+    /* Espaciado */
+    padding: 30px;
+
+    /* Sombra potente */
+    box-shadow: 0 28px 54px rgba(30, 58, 138, 0.3);
+
+    /* Oculta elementos que sobresalen */
+    overflow: hidden;
+}
+
+.hero-card::before {
+    /* Crea una burbuja decorativa */
+    content: "";
+
+    /* Posicionamiento absoluto */
+    position: absolute;
+
+    /* Tamaño */
+    width: 220px;
+    height: 220px;
+
+    /* Fondo translúcido */
+    background: rgba(255, 255, 255, 0.08);
+
+    /* Forma circular */
+    border-radius: 50%;
+
+    /* Ubicación */
+    top: -60px;
+    right: -60px;
+}
+
+.hero-card__characters {
+    /* Centra la imagen */
+    margin: 0 auto;
+
+    /* Animación flotante */
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-card__speech {
+    /* Posición absoluta */
+    position: absolute;
+
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Texto azul */
+    color: var(--blue);
+
+    /* Espaciado interno */
+    padding: 0.8rem 1rem;
+
+    /* Bordes */
+    border-radius: 18px;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+}
+
+.speech--1 {
+    /* Ubicación del globo 1 */
+    top: 18px;
+    right: 18px;
+}
+
+.speech--2 {
+    /* Ubicación del globo 2 */
+    bottom: 84px;
+    left: 18px;
+}
+
+.mini-badge {
+    /* Distribuye etiquetas */
+    display: flex;
+
+    /* Permite salto */
+    flex-wrap: wrap;
+
+    /* Gap */
+    gap: 10px;
+
+    /* Posición absoluta */
+    position: absolute;
+
+    /* Ubicación */
+    bottom: 18px;
+    right: 18px;
+}
+
+.mini-badge span {
+    /* Fondo translúcido */
+    background: rgba(255, 255, 255, 0.14);
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Espaciado */
+    padding: 0.5rem 0.8rem;
+
+    /* Bordes */
+    border-radius: 999px;
+
+    /* Tamaño */
+    font-size: 0.92rem;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Borde sutil */
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* ============================== */
+/* SOCIAL PROOF                   */
+/* ============================== */
+.social-proof {
+    /* Fondo suave rosa */
+    background: linear-gradient(180deg, rgba(244, 114, 182, 0.05), rgba(255, 255, 255, 0));
+}
+
+.logos-strip {
+    /* Layout flexible */
+    display: flex;
+
+    /* Permite wrap */
+    flex-wrap: wrap;
+
+    /* Gap */
+    gap: 12px;
+
+    /* Centra horizontalmente */
+    justify-content: center;
+
+    /* Margen inferior */
+    margin-bottom: 32px;
+}
+
+.logo-pill {
+    /* Fondo */
+    background: var(--white);
+
+    /* Espacio */
+    padding: 0.85rem 1rem;
+
+    /* Borde */
+    border: 1px solid var(--line);
+
+    /* Bordes redondos */
+    border-radius: 999px;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Sombra */
+    box-shadow: 0 10px 24px rgba(30, 58, 138, 0.08);
+}
+
+.reviews-grid {
+    /* Tres columnas */
+    display: grid;
+
+    /* Reparto */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Espaciado */
+    gap: 20px;
+}
+
+
+.review-card {
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Espaciado */
+    padding: 24px;
+
+    /* Bordes */
+    border-radius: 28px;
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+}
+
+.review-card__head {
+    /* Alineación horizontal */
+    display: flex;
+
+    /* Alinea verticalmente */
+    align-items: center;
+
+    /* Separación */
+    gap: 14px;
+
+    /* Margen inferior */
+    margin-bottom: 14px;
+}
+
+.review-card__avatar {
+    /* Tamaño circular */
+    width: 56px;
+    height: 56px;
+
+    /* Centra letra */
+    display: grid;
+    place-items: center;
+
+    /* Forma */
+    border-radius: 50%;
+
+    /* Fondo degradado */
+    background: linear-gradient(135deg, var(--orange), var(--pink));
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Peso */
+    font-weight: 800;
+}
+
+/* ============================== */
+/* SERVICIOS                      */
+/* ============================== */
+.services-grid {
+    /* Tres columnas */
+    display: grid;
+
+    /* Reparto */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Gap */
+    gap: 20px;
+}
+
+.service-card {
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Espacio interno */
+    padding: 28px;
+
+    /* Bordes */
+    border-radius: 28px;
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+
+    /* Layout vertical */
+    display: flex;
+    flex-direction: column;
+
+    /* Separación interna */
+    gap: 14px;
+
+    /* Transición */
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    /* Levanta la tarjeta al hover */
+    transform: translateY(-6px);
+}
+
+.service-card__icon {
+    /* Caja del ícono */
+    width: 72px;
+    height: 72px;
+
+    /* Centra emoji */
+    display: grid;
+    place-items: center;
+
+    /* Tamaño del emoji */
+    font-size: 2rem;
+
+    /* Fondo suave */
+    background: rgba(34, 197, 94, 0.12);
+
+    /* Bordes */
+    border-radius: 20px;
+}
+
+.service-card h3 {
+    /* Fuente display */
+    font-family: "Baloo 2", cursive;
+
+    /* Márgenes */
+    margin: 0;
+
+    /* Tamaño */
+    font-size: 1.45rem;
+}
+
+.service-card p {
+    /* Color secundario */
+    color: var(--text-soft);
+
+    /* Empuja el botón al final */
+    flex-grow: 1;
+}
+
+/* ============================== */
+/* PROCESO                        */
+/* ============================== */
+.process {
+    /* Fondo verde suave */
+    background: linear-gradient(180deg, rgba(34, 197, 94, 0.05), rgba(255, 255, 255, 0));
+}
+
+.process-grid {
+    /* Cuatro columnas */
+    display: grid;
+
+    /* Reparto */
+    grid-template-columns: repeat(4, 1fr);
+
+    /* Gap */
+    gap: 18px;
+}
+
+.process-card {
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Espaciado */
+    padding: 26px;
+
+    /* Bordes */
+    border-radius: 28px;
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+}
+
+.process-card__number {
+    /* Caja redonda del número */
+    width: 48px;
+    height: 48px;
+
+    /* Centra número */
+    display: grid;
+    place-items: center;
+
+    /* Fondo naranjo */
+    background: var(--orange);
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Forma */
+    border-radius: 50%;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Margen inferior */
+    margin-bottom: 14px;
+}
+
+.process-card h3 {
+    /* Fuente display */
+    font-family: "Baloo 2", cursive;
+
+    /* Márgenes */
+    margin: 0 0 8px;
+
+    /* Tamaño */
+    font-size: 1.35rem;
+}
+
+.process-card p {
+    /* Color suave */
+    color: var(--text-soft);
+}
+
+/* ============================== */
+/* PAQUETES                       */
+/* ============================== */
+.packages {
+    /* Fondo suave */
+    background: linear-gradient(180deg, rgba(34, 197, 94, 0.05), rgba(255, 255, 255, 0));
+}
+
+.packages-grid {
+    /* Tres columnas */
+    display: grid;
+
+    /* Reparto */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Gap */
+    gap: 22px;
+}
+
+.package-card {
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Espaciado */
+    padding: 30px;
+
+    /* Bordes */
+    border-radius: 30px;
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+}
+
+.package-card--featured {
+    /* Fondo destacado */
+    background: linear-gradient(135deg, var(--blue), #3459d2);
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Escala levemente mayor */
+    transform: scale(1.03);
+}
+
+.package-card__tag {
+    /* Etiqueta del paquete */
+    display: inline-block;
+
+    /* Fondo */
+    background: rgba(255, 90, 31, 0.14);
+
+    /* Espaciado */
+    padding: 0.42rem 0.8rem;
+
+    /* Bordes */
+    border-radius: 999px;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Margen */
+    margin-bottom: 12px;
+}
+
+.package-card h3 {
+    /* Fuente display */
+    font-family: "Baloo 2", cursive;
+
+    /* Tamaño */
+    font-size: 1.85rem;
+
+    /* Margen */
+    margin: 0 0 14px;
+}
+
+.package-card ul {
+    /* Quita viñetas */
+    list-style: none;
+
+    /* Elimina padding */
+    padding: 0;
+
+    /* Márgenes */
+    margin: 0 0 24px;
+}
+
+.package-card li {
+    /* Espacio por línea */
+    padding: 0.65rem 0;
+
+    /* Línea divisoria */
+    border-bottom: 1px dashed rgba(30, 58, 138, 0.16);
+
+    /* Peso */
+    font-weight: 700;
+}
+
+.package-card--featured li {
+    /* Línea más suave en fondo azul */
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================== */
+/* GALERÍA ESTILO INSTAGRAM       */
+/* ============================== */
+.instagram-gallery {
+    /* Fondo suave para diferenciar la sección */
+    background: linear-gradient(180deg, rgba(244, 114, 182, 0.04), rgba(255, 255, 255, 0));
+}
+
+.instagram-profile {
+    /* Layout horizontal */
+    display: grid;
+
+    /* Distribución de columnas */
+    grid-template-columns: auto 1fr auto;
+
+    /* Espacio entre columnas */
+    gap: 18px;
+
+    /* Alineación vertical */
+    align-items: center;
+
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Espaciado interno */
+    padding: 20px;
+
+    /* Bordes suaves */
+    border-radius: 24px;
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+
+    /* Espaciado inferior */
+    margin-bottom: 28px;
+}
+
+.instagram-profile__avatar {
+    /* Tamaño del avatar */
+    width: 72px;
+    height: 72px;
+
+    /* Forma redonda */
+    border-radius: 50%;
+
+    /* Oculta exceso */
+    overflow: hidden;
+
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Borde decorativo */
+    border: 3px solid rgba(255, 90, 31, 0.18);
+
+    /* Evita deformación */
+    flex-shrink: 0;
+}
+
+.instagram-profile__avatar img {
+    /* Ocupar todo el espacio */
+    width: 100%;
+    height: 100%;
+
+    /* Ajuste visual */
+    object-fit: cover;
+}
+
+.instagram-profile__info h3 {
+    /* Tipografía display */
+    font-family: "Baloo 2", cursive;
+
+    /* Tamaño */
+    font-size: 1.6rem;
+
+    /* Margen */
+    margin: 0 0 4px;
+}
+
+.instagram-profile__info p {
+    /* Sin margen extra */
+    margin: 0;
+
+    /* Color secundario */
+    color: var(--text-soft);
+}
+
+.instagram-feed-grid {
+    /* Grid de 3 columnas */
+    display: grid;
+
+    /* Reparto */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Espaciado entre tarjetas */
+    gap: 18px;
+}
+
+.instagram-post-card {
+    /* Posición relativa para overlay */
+    position: relative;
+
+    /* Bordes suaves */
+    border-radius: 24px;
+
+    /* Oculta contenido excedente */
+    overflow: hidden;
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Transición */
+    transition: var(--transition);
+}
+
+.instagram-post-card:hover {
+    /* Leve elevación */
+    transform: translateY(-6px);
+}
+
+.instagram-post-card img {
+    /* Ocupar ancho total */
+    width: 100%;
+
+    /* Alto uniforme */
+    height: 320px;
+
+    /* Ajuste visual */
+    object-fit: cover;
+
+    /* Transición suave */
+    transition: var(--transition);
+}
+
+.instagram-post-card:hover img {
+    /* Zoom leve */
+    transform: scale(1.04);
+}
+
+.instagram-post-card__overlay {
+    /* Capa superior */
+    position: absolute;
+
+    /* Ocupar toda la tarjeta */
+    inset: 0;
+
+    /* Fondo oscuro translúcido */
+    background: linear-gradient(to top,
+            rgba(16, 32, 79, 0.72),
+            rgba(16, 32, 79, 0.12));
+
+    /* Centrado del texto */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    /* Espaciado */
+    padding: 20px;
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Opacidad inicial */
+    opacity: 0;
+
+    /* Transición */
+    transition: var(--transition);
+}
+
+.instagram-post-card:hover .instagram-post-card__overlay {
+    /* Muestra overlay al pasar el mouse */
+    opacity: 1;
+}
+
+.instagram-gallery__cta {
+    /* Centra el botón final */
+    text-align: center;
+
+    /* Espaciado superior */
+    margin-top: 28px;
+}
+
+/* ============================== */
+/* RESPONSIVE INSTAGRAM GALLERY   */
+/* ============================== */
+@media (max-width: 991px) {
+    .instagram-profile {
+        /* Una sola columna en tablet */
+        grid-template-columns: 1fr;
+
+        /* Alinea a la izquierda */
+        justify-items: start;
+    }
+
+    .instagram-feed-grid {
+        /* Dos columnas en tablet */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .instagram-feed-grid {
+        /* Una columna en móvil */
+        grid-template-columns: 1fr;
+    }
+
+    .instagram-post-card img {
+        /* Reduce altura en móvil */
+        height: 280px;
+    }
+}
+
+
+/* ============================== */
+/* FORMULARIO DESCUENTO           */
+/* ============================== */
+.discount-lead {
+    /* Fondo colorido */
+    background: linear-gradient(135deg, var(--orange), #ff7a33, var(--pink));
+}
+
+.discount-box {
+    /* Dos columnas */
+    display: grid;
+
+    /* Reparto */
+    grid-template-columns: 1fr 0.95fr;
+
+    /* Gap */
+    gap: 28px;
+
+    /* Centrado vertical */
+    align-items: center;
+}
+
+.discount-box__content {
+    /* Texto blanco */
+    color: var(--white);
+}
+
+.discount-box__content h2 {
+    /* Fuente display */
+    font-family: "Baloo 2", cursive;
+
+    /* Tamaño fluido */
+    font-size: clamp(2rem, 4vw, 3.4rem);
+
+    /* Márgenes */
+    margin: 0 0 12px;
+}
+
+.discount-box__content p {
+    /* Tamaño */
+    font-size: 1.05rem;
+}
+
+.discount-list {
+    /* Quita viñetas */
+    list-style: none;
+
+    /* Quita padding */
+    padding: 0;
+
+    /* Margen */
+    margin: 20px 0 0;
+}
+
+.discount-list li {
+    /* Espaciado y espacio para el check */
+    padding: 0.6rem 0 0.6rem 1.6rem;
+
+    /* Posición relativa para pseudo-elemento */
+    position: relative;
+
+    /* Peso */
+    font-weight: 700;
+}
+
+.discount-list li::before {
+    /* Dibuja un check */
+    content: "✓";
+
+    /* Posicionamiento */
+    position: absolute;
+
+    /* Ubicación */
+    left: 0;
+    top: 0.6rem;
+
+    /* Peso */
+    font-weight: 800;
+}
+
+.discount-form {
+    /* Fondo blanco semitransparente */
+    background: rgba(255, 255, 255, 0.96);
+
+    /* Espaciado */
+    padding: 28px;
+
+    /* Bordes */
+    border-radius: 28px;
+
+    /* Sombra */
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14);
+}
+
+.hidden-field {
+    /* Saca del área visible */
+    position: absolute;
+
+    /* Lo manda lejos */
+    left: -9999px;
+
+    /* Reduce visibilidad */
+    opacity: 0;
+}
+
+.form-group {
+    /* Espacio inferior entre campos */
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    /* Pone etiqueta arriba */
+    display: block;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Margen inferior */
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    /* Ocupa todo el ancho */
+    width: 100%;
+
+    /* Espaciado interno */
+    padding: 1rem 1rem;
+
+    /* Borde */
+    border: 1px solid rgba(30, 58, 138, 0.12);
+
+    /* Bordes */
+    border-radius: 16px;
+
+    /* Sin outline nativo */
+    outline: none;
+
+    /* Transición */
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    /* Resalta borde al enfocar */
+    border-color: var(--blue);
+
+    /* Halo de foco */
+    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.08);
+}
+
+.checkbox {
+    /* Layout en fila */
+    display: flex;
+
+    /* Alinea arriba */
+    align-items: flex-start;
+
+    /* Espacio entre checkbox y texto */
+    gap: 10px;
+
+    /* Margen inferior */
+    margin-bottom: 18px;
+
+    /* Color suave */
+    color: var(--text-soft);
+
+    /* Tamaño */
+    font-size: 0.95rem;
+}
+
+.checkbox input {
+    /* Ajuste fino del check */
+    margin-top: 4px;
+}
+
+.form-message {
+    /* Espacio superior */
+    margin-top: 14px;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Evita saltos de layout */
+    min-height: 24px;
+}
+
+.discount-success {
+    /* Espaciado superior */
+    margin-top: 18px;
+
+    /* Espaciado interno */
+    padding: 16px;
+
+    /* Bordes */
+    border-radius: 18px;
+
+    /* Fondo verde suave */
+    background: rgba(34, 197, 94, 0.12);
+
+    /* Borde verde suave */
+    border: 1px solid rgba(34, 197, 94, 0.24);
+}
+
+.discount-success__code {
+    /* Margen */
+    margin: 0 0 12px;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Color */
+    color: var(--text);
+}
+
+/* ============================== */
+/* FAQ                            */
+/* ============================== */
+.faq-list {
+    /* Layout vertical */
+    display: grid;
+
+    /* Gap */
+    gap: 14px;
+}
+
+.faq-item {
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Bordes */
+    border-radius: 22px;
+
+    /* Sombra */
+    box-shadow: var(--shadow);
+
+    /* Oculta contenido expandible */
+    overflow: hidden;
+}
+
+.faq-question {
+    /* Ocupa ancho completo */
+    width: 100%;
+
+    /* Fondo transparente */
+    background: transparent;
+
+    /* Sin borde */
+    border: none;
+
+    /* Alinea texto a la izquierda */
+    text-align: left;
+
+    /* Espaciado */
+    padding: 1.2rem 1.3rem;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* Color */
+    color: var(--text);
+}
+
+.faq-answer {
+    /* Arranca cerrado */
+    max-height: 0;
+
+    /* Oculta el contenido */
+    overflow: hidden;
+
+    /* Transición de apertura */
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    /* Espaciado interno */
+    padding: 0 1.3rem 1.2rem;
+
+    /* Sin margen externo */
+    margin: 0;
+
+    /* Color */
+    color: var(--text-soft);
+}
+
+.faq-item.active .faq-answer {
+    /* Altura máxima al abrir */
+    max-height: 200px;
+}
+
+/* ============================== */
+/* CTA FINAL                      */
+/* ============================== */
+.cta-final__box {
+    /* Fondo degradado azul */
+    background: linear-gradient(135deg, var(--blue), #3156d0);
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Espaciado */
+    padding: 44px;
+
+    /* Bordes */
+    border-radius: 34px;
+
+    /* Layout horizontal */
+    display: flex;
+
+    /* Separa contenido y botón */
+    justify-content: space-between;
+
+    /* Centrado vertical */
+    align-items: center;
+
+    /* Gap */
+    gap: 28px;
+
+    /* Sombra */
+    box-shadow: 0 28px 54px rgba(30, 58, 138, 0.26);
+}
+
+.cta-final__box h2 {
+    /* Fuente display */
+    font-family: "Baloo 2", cursive;
+
+    /* Tamaño */
+    font-size: clamp(2rem, 4vw, 3.1rem);
+
+    /* Márgenes */
+    margin: 0 0 10px;
+}
+
+.cta-final__box p {
+    /* Márgenes */
+    margin: 0;
+
+    /* Ancho máximo */
+    max-width: 680px;
+}
+
+/* ============================== */
+/* FOOTER                         */
+/* ============================== */
+.footer {
+    /* Fondo azul */
+    background: var(--blue);
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Espaciado vertical */
+    padding: 38px 0;
+}
+
+.footer__grid {
+    /* Tres columnas */
+    display: grid;
+
+    /* Reparto */
+    grid-template-columns: 1.2fr 1fr 1fr;
+
+    /* Gap */
+    gap: 26px;
+}
+
+.footer h3,
+.footer h4 {
+    /* Elimina margen superior */
+    margin-top: 0;
+}
+
+/* ============================== */
+/* WHATSAPP FLOTANTE              */
+/* ============================== */
+.floating-whatsapp {
+    /* Fijo en pantalla */
+    position: fixed;
+
+    /* Ubicación */
+    right: 18px;
+    bottom: 18px;
+
+    /* Por encima de casi todo */
+    z-index: 999;
+
+    /* Fondo verde WhatsApp */
+    background: #25D366;
+
+    /* Texto blanco */
+    color: var(--white);
+
+    /* Espaciado */
+    padding: 1rem 1.2rem;
+
+    /* Botón redondeado */
+    border-radius: 999px;
+
+    /* Peso */
+    font-weight: 800;
+
+    /* Sombra */
+    box-shadow: 0 18px 36px rgba(37, 211, 102, 0.34);
+
+    /* Transición */
+    transition: var(--transition);
+}
+
+.floating-whatsapp:hover {
+    /* Sube al hover */
+    transform: translateY(-3px);
+}
+
+/* ============================== */
+/* LIGHTBOX                       */
+/* ============================== */
+.lightbox {
+    /* Oculto por defecto */
+    display: none;
+
+    /* Fijo */
+    position: fixed;
+
+    /* Cubre toda la pantalla */
+    inset: 0;
+
+    /* Fondo oscuro */
+    background: rgba(15, 23, 42, 0.92);
+
+    /* Centra contenido */
+    align-items: center;
+    justify-content: center;
+
+    /* Z alto */
+    z-index: 2000;
+
+    /* Espacio */
+    padding: 20px;
+}
+
+.lightbox.active {
+    /* Lo hace visible */
+    display: flex;
+}
+
+.lightbox img {
+    /* Limita ancho */
+    max-width: min(900px, 95vw);
+
+    /* Limita alto */
+    max-height: 85vh;
+
+    /* Bordes redondeados */
+    border-radius: 24px;
+}
+
+.lightbox__close {
+    /* Posición absoluta */
+    position: absolute;
+
+    /* Ubicación */
+    top: 18px;
+    right: 18px;
+
+    /* Fondo blanco */
+    background: var(--white);
+
+    /* Tamaño */
+    width: 52px;
+    height: 52px;
+
+    /* Forma redonda */
+    border-radius: 50%;
+
+    /* Tamaño del símbolo */
+    font-size: 2rem;
+
+    /* Color */
+    color: var(--blue);
+
+    /* Sin borde */
+    border: none;
+
+    /* Cursor */
+    cursor: pointer;
+}
+
+/* ============================== */
+/* ANIMACIONES DE ENTRADA         */
+/* ============================== */
+.reveal {
+    /* Estado inicial invisible */
+    opacity: 0;
+
+    /* Baja un poco el elemento */
+    transform: translateY(24px);
+
+    /* Transición suave */
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+    /* Estado visible */
+    opacity: 1;
+
+    /* Vuelve a posición original */
+    transform: translateY(0);
+}
+
+/* ============================== */
+/* ANIMACIÓN FLOTANTE HERO        */
+/* ============================== */
+@keyframes float {
+
+    /* Inicio */
+    0% {
+        transform: translateY(0px);
+    }
+
+    /* Punto más alto */
+    50% {
+        transform: translateY(-10px);
+    }
+
+    /* Fin */
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ============================== */
+/* RESPONSIVE TABLET              */
+/* ============================== */
+@media (max-width: 991px) {
+
+    .hero__grid,
+    .discount-box,
+    .about__grid,
+    .cta-final__box,
+    .footer__grid {
+        /* Convierte esas secciones en una sola columna */
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid,
+    .packages-grid,
+    .reviews-grid,
+    .process-grid,
+    .hero__stats {
+        /* Pasa a dos columnas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-final__box {
+        /* Apila verticalmente */
+        flex-direction: column;
+
+        /* Alinea al inicio */
+        align-items: flex-start;
+    }
+}
+
+/* ============================== */
+/* RESPONSIVE MOBILE              */
+/* ============================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        /* Muestra el menú hamburguesa */
+        display: flex;
+    }
+
+    .nav {
+        /* Oculta menú por defecto */
+        display: none;
+
+        /* Lo posiciona debajo del header */
+        position: absolute;
+
+        /* Ubicación */
+        top: 82px;
+        left: 1rem;
+        right: 1rem;
+
+        /* Fondo */
+        background: var(--white);
+
+        /* Espaciado */
+        padding: 1rem;
+
+        /* Bordes */
+        border-radius: 20px;
+
+        /* Sombra */
+        box-shadow: var(--shadow);
+
+        /* Layout vertical */
+        flex-direction: column;
+
+        /* Alineación */
+        align-items: flex-start;
+    }
+
+    .nav.active {
+        /* Muestra el menú al activarse */
+        display: flex;
+    }
+
+    .services-grid,
+    .packages-grid,
+    .reviews-grid,
+    .process-grid,
+    .hero__stats {
+        /* Una sola columna */
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        /* Reduce padding en móvil */
+        padding: 74px 0;
+    }
+
+    .hero-card__speech {
+        /* Quita posición absoluta en móvil */
+        position: static;
+
+        /* Da espacio entre globos */
+        margin-top: 14px;
+    }
+
+    .mini-badge {
+        /* Quita posición absoluta */
+        position: static;
+
+        /* Agrega separación */
+        margin-top: 16px;
+    }
+
+    .brand__logo {
+        /* Reduce tamaño del logo */
+        height: 50px;
+    }
+}
+
+/* ============================== */
+/* NUEVA SECCIÓN: RESEÑAS GOOGLE  */
+/* ============================== */
+.reviews-container {
+    padding: 20px 0;
+    /* ... resto del código ... */
+}
+/* Contenedor del Carrusel */
+.reviews-container {
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-slider {
+    display: flex;
+    gap: 24px;
+    padding: 20px;
+    /* Esto permite scroll horizontal suave en móvil */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Oculta barra en Firefox */
+}
+
+.reviews-slider::-webkit-scrollbar {
+    display: none; /* Oculta barra en Chrome/Safari */
+}
+
+.review-card {
+    min-width: 320px; /* Tamaño fijo para el slider */
+    scroll-snap-align: center;
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 15px 35px rgba(30, 58, 138, 0.1);
+    border: 1px solid var(--line);
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--orange);
+}
+
+.stars {
+    color: #FBBF24; /* Dorado Google */
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.google-badge {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: var(--text-soft);
+}

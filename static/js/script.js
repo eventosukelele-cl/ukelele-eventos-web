@@ -1,0 +1,390 @@
+/* ====================================== */
+/* MENÚ MÓVIL                             */
+/* ====================================== */
+
+/* Obtiene el botón hamburguesa */
+const menuToggle = document.getElementById("menuToggle");
+
+/* Obtiene el contenedor del menú */
+const mainNav = document.getElementById("mainNav");
+
+/* Si existen ambos elementos */
+if (menuToggle && mainNav) {
+  /* Al hacer clic en el botón */
+  menuToggle.addEventListener("click", () => {
+    /* Alterna la clase active del menú */
+    mainNav.classList.toggle("active");
+  });
+}
+
+/* Selecciona todos los links del menú */
+const navLinks = document.querySelectorAll(".nav a");
+
+/* Recorre cada link */
+navLinks.forEach((link) => {
+  /* Al hacer clic en un link */
+  link.addEventListener("click", () => {
+    /* Si existe el menú */
+    if (mainNav) {
+      /* Lo cierra */
+      mainNav.classList.remove("active");
+    }
+  });
+});
+
+/* ====================================== */
+/* REVEAL AL HACER SCROLL                 */
+/* ====================================== */
+
+/* Selecciona todos los elementos con clase reveal */
+const revealElements = document.querySelectorAll(".reveal");
+
+/* Crea un observer para detectar cuándo entran en pantalla */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    /* Recorre todos los elementos observados */
+    entries.forEach((entry) => {
+      /* Si el elemento está visible */
+      if (entry.isIntersecting) {
+        /* Agrega la clase que activa la animación */
+        entry.target.classList.add("is-visible");
+      }
+    });
+  },
+  {
+    /* Umbral de visibilidad */
+    threshold: 0.15,
+  }
+);
+
+/* Observa cada elemento reveal */
+revealElements.forEach((element) => {
+  /* Lo agrega al observer */
+  revealObserver.observe(element);
+});
+
+/* ====================================== */
+/* FAQ ACORDEÓN                           */
+/* ====================================== */
+
+/* Selecciona todos los bloques FAQ */
+const faqItems = document.querySelectorAll(".faq-item");
+
+/* Recorre cada item */
+faqItems.forEach((item) => {
+  /* Busca el botón de la pregunta */
+  const question = item.querySelector(".faq-question");
+
+  /* Si existe */
+  if (question) {
+    /* Al hacer clic */
+    question.addEventListener("click", () => {
+      /* Alterna la clase active en el item */
+      item.classList.toggle("active");
+    });
+  }
+});
+
+/* ====================================== */
+/* LIGHTBOX                               */
+/* ====================================== */
+
+/* Obtiene el contenedor del lightbox */
+const lightbox = document.getElementById("lightbox");
+
+/* Obtiene la imagen del lightbox */
+const lightboxImage = document.getElementById("lightboxImage");
+
+/* Obtiene el botón de cierre */
+const lightboxClose = document.getElementById("lightboxClose");
+
+/* Selecciona todos los botones que abrirían zoom */
+const zoomButtons = document.querySelectorAll(".gallery-item__zoom");
+
+/* Recorre cada botón */
+zoomButtons.forEach((button) => {
+  /* Al hacer clic */
+  button.addEventListener("click", (event) => {
+    /* Busca el elemento padre más cercano .gallery-item */
+    const galleryItem = event.target.closest(".gallery-item");
+
+    /* Si no existe, se detiene */
+    if (!galleryItem) return;
+
+    /* Busca la imagen dentro del item */
+    const image = galleryItem.querySelector("img");
+
+    /* Si no existe imagen, se detiene */
+    if (!image) return;
+
+    /* Copia el src al lightbox */
+    lightboxImage.src = image.src;
+
+    /* Copia el alt al lightbox */
+    lightboxImage.alt = image.alt;
+
+    /* Abre el lightbox */
+    lightbox.classList.add("active");
+  });
+});
+
+/* Si existe el botón cerrar */
+if (lightboxClose) {
+  /* Cierra al hacer clic */
+  lightboxClose.addEventListener("click", () => {
+    /* Quita la clase active */
+    lightbox.classList.remove("active");
+  });
+}
+
+/* Si existe el contenedor del lightbox */
+if (lightbox) {
+  /* Permite cerrar al hacer clic fuera de la imagen */
+  lightbox.addEventListener("click", (event) => {
+    /* Si el clic fue sobre el fondo */
+    if (event.target === lightbox) {
+      /* Cierra el lightbox */
+      lightbox.classList.remove("active");
+    }
+  });
+}
+
+/* Permite cerrar con tecla Escape */
+window.addEventListener("keydown", (event) => {
+  /* Si la tecla es Escape y existe lightbox */
+  if (event.key === "Escape" && lightbox) {
+    /* Cierra el lightbox */
+    lightbox.classList.remove("active");
+  }
+});
+
+/* ====================================== */
+/* UTILIDADES DE TRACKING                 */
+/* ====================================== */
+
+/* Función que obtiene los parámetros UTM de la URL */
+function getUTMParams() {
+  /* Crea un objeto para leer la query string */
+  const params = new URLSearchParams(window.location.search);
+
+  /* Devuelve un objeto con todos los UTMs */
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_content: params.get("utm_content") || "",
+    utm_term: params.get("utm_term") || "",
+  };
+}
+
+/* ====================================== */
+/* FORMULARIO DE DESCUENTO                */
+/* ====================================== */
+
+/* Obtiene el formulario */
+const discountForm = document.getElementById("discountForm");
+
+/* Obtiene el texto de feedback */
+const formMessage = document.getElementById("formMessage");
+
+/* Obtiene el botón submit */
+const discountSubmit = document.getElementById("discountSubmit");
+
+/* Obtiene la caja de éxito */
+const discountSuccess = document.getElementById("discountSuccess");
+
+/* Obtiene el texto del código */
+const discountCodeText = document.getElementById("discountCodeText");
+
+/* Obtiene el botón de WhatsApp */
+const discountWhatsappBtn = document.getElementById("discountWhatsappBtn");
+
+/* Define el código fijo del descuento */
+const FIXED_DISCOUNT_CODE = "UKEWEB-10";
+
+/* Si el formulario existe */
+if (discountForm) {
+  /* Escucha el envío */
+  discountForm.addEventListener("submit", async (event) => {
+    /* Evita recargar la página */
+    event.preventDefault();
+
+    /* Obtiene el valor del nombre */
+    const name = document.getElementById("discountName").value.trim();
+
+    /* Obtiene el valor del email */
+    const email = document.getElementById("discountEmail").value.trim();
+
+    /* Obtiene el estado del consentimiento */
+    const consent = document.getElementById("discountConsent").checked;
+
+    /* Obtiene el valor del honeypot */
+    const website = document.getElementById("website").value.trim();
+
+    /* Patrón simple de validación de email */
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    /* Limpia mensajes anteriores */
+    formMessage.textContent = "";
+
+    /* Si existe el bloque de éxito */
+    if (discountSuccess) {
+      /* Lo oculta al iniciar */
+      discountSuccess.hidden = true;
+    }
+
+    /* Si el honeypot trae valor, probablemente es spam */
+    if (website !== "") {
+      /* Muestra error genérico */
+      formMessage.textContent = "No fue posible procesar el envío.";
+
+      /* Color rojo */
+      formMessage.style.color = "#b91c1c";
+
+      /* Sale */
+      return;
+    }
+
+    /* Si falta nombre */
+    if (!name) {
+      /* Muestra error */
+      formMessage.textContent = "Por favor, ingresa tu nombre.";
+
+      /* Color rojo */
+      formMessage.style.color = "#b91c1c";
+
+      /* Sale */
+      return;
+    }
+
+    /* Si el email no es válido */
+    if (!emailPattern.test(email)) {
+      /* Muestra error */
+      formMessage.textContent = "Por favor, ingresa un correo válido.";
+
+      /* Color rojo */
+      formMessage.style.color = "#b91c1c";
+
+      /* Sale */
+      return;
+    }
+
+    /* Si no aceptó el consentimiento */
+    if (!consent) {
+      /* Muestra error */
+      formMessage.textContent = "Debes aceptar el envío de información para recibir tu descuento.";
+
+      /* Color rojo */
+      formMessage.style.color = "#b91c1c";
+
+      /* Sale */
+      return;
+    }
+
+    /* Si no se configuró la URL del Apps Script */
+    if (!window.GOOGLE_SCRIPT_URL || window.GOOGLE_SCRIPT_URL === "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT") {
+      /* Muestra error */
+      formMessage.textContent = "Falta configurar la URL del formulario.";
+
+      /* Color rojo */
+      formMessage.style.color = "#b91c1c";
+
+      /* Sale */
+      return;
+    }
+
+    /* Desactiva el botón para evitar doble envío */
+    discountSubmit.disabled = true;
+
+    /* Cambia el texto del botón */
+    discountSubmit.textContent = "Enviando...";
+
+    /* Obtiene UTMs de la URL */
+    const utm = getUTMParams();
+
+    /* Arma el objeto que se enviará al backend */
+    const payload = {
+      name: name,
+      email: email,
+      consent: consent ? "yes" : "no",
+      discount: "10%",
+      discountCode: FIXED_DISCOUNT_CODE,
+      source: "website-ukelele",
+      page: window.location.href,
+      referrer: document.referrer || "",
+      userAgent: navigator.userAgent,
+      timestamp: new Date().toISOString(),
+      ...utm,
+    };
+
+    try {
+      /* Envía el payload al Apps Script */
+      const response = await fetch(window.GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      /* Convierte la respuesta a JSON */
+      const result = await response.json();
+
+      /* Si el backend respondió success */
+      if (result.status === "success") {
+        /* Guarda respaldo local del lead */
+        localStorage.setItem("ukeleleLead", JSON.stringify(payload));
+
+        /* Muestra mensaje de éxito */
+        formMessage.textContent = `¡Listo, ${name}! Ya tienes activo tu 10% de descuento.`;
+
+        /* Color verde */
+        formMessage.style.color = "#166534";
+
+        /* Si existe el texto del código */
+        if (discountCodeText) {
+          /* Inserta el código fijo */
+          discountCodeText.textContent = FIXED_DISCOUNT_CODE;
+        }
+
+        /* Si existe el botón de WhatsApp */
+        if (discountWhatsappBtn) {
+          /* Arma el mensaje dinámico */
+          const whatsappMessage =
+            `Hola 😊 Me registré en la web de Ukelele Eventos y quiero cotizar mi evento usando mi código de descuento ${FIXED_DISCOUNT_CODE}.`;
+
+          /* Arma la URL final */
+          const whatsappUrl =
+            `https://wa.me/56948904545?text=${encodeURIComponent(whatsappMessage)}`;
+
+          /* Inserta la URL en el botón */
+          discountWhatsappBtn.href = whatsappUrl;
+        }
+
+        /* Si existe el bloque de éxito */
+        if (discountSuccess) {
+          /* Lo muestra */
+          discountSuccess.hidden = false;
+        }
+
+        /* Reinicia el formulario */
+        discountForm.reset();
+      } else {
+        /* Si el backend respondió error, lo lanza */
+        throw new Error(result.message || "No fue posible guardar el lead.");
+      }
+    } catch (error) {
+      /* Mensaje de error general */
+      formMessage.textContent = "Hubo un problema al enviar tus datos. Intenta nuevamente en unos minutos.";
+
+      /* Color rojo */
+      formMessage.style.color = "#b91c1c";
+    } finally {
+      /* Reactiva el botón */
+      discountSubmit.disabled = false;
+
+      /* Restaura el texto del botón */
+      discountSubmit.textContent = "Quiero mi 10% de descuento";
+    }
+  });
+}

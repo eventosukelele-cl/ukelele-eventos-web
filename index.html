@@ -1,0 +1,773 @@
+<!-- Define que este documento usa HTML5 -->
+<!DOCTYPE html>
+<!-- Indica que el idioma principal del sitio es español -->
+<html lang="es">
+
+<head>
+    <!-- Define la codificación de caracteres para soportar tildes y caracteres especiales -->
+    <meta charset="UTF-8" />
+    <!-- Hace que el sitio sea responsive en celulares y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título SEO que aparece en Google y en la pestaña del navegador -->
+    <title>Ukelele Eventos SPA | Animación Infantil Premium en Santiago</title>
+    <!-- Descripción SEO para buscadores -->
+    <meta name="description"
+        content="Animación infantil premium en Santiago de Chile. Cumpleaños, pintacaritas, talleres creativos, eventos familiares y corporativos con Ukelele Eventos SPA." />
+    <!-- Palabras clave SEO básicas -->
+    <meta name="keywords"
+        content="animación infantil Santiago, cumpleaños infantiles Santiago, pintacaritas Santiago, eventos infantiles premium, animadores infantiles, talleres creativos" />
+    <!-- Indica a los buscadores que indexen la página -->
+    <meta name="robots" content="index,follow" />
+    <!-- Color principal del navegador móvil -->
+    <meta name="theme-color" content="#1E3A8A" />
+    <!-- Título para compartir en redes sociales -->
+    <meta property="og:title" content="Ukelele Eventos SPA | Animación Infantil Premium en Santiago" />
+    <!-- Descripción para compartir en redes sociales -->
+    <meta property="og:description"
+        content="Celebraciones organizadas, inclusivas y memorables para familias y empresas." />
+    <!-- Tipo de contenido Open Graph -->
+    <meta property="og:type" content="website" />
+
+    <!-- Imagen destacada al compartir -->
+    <meta property="og:image" content="LOGO (2).png" />
+
+    <!-- Configuración básica para Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Enlaza el archivo CSS principal -->
+    <link rel="stylesheet" href="./static/css/style.css" />
+
+    <!-- Optimiza la conexión con Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <!-- Optimiza la conexión con el servidor de fuentes -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Carga las tipografías usadas en el sitio -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Datos estructurados para SEO local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EntertainmentBusiness",
+      "name": "Ukelele Eventos SPA",
+      "description": "Empresa especializada en animación infantil premium en Santiago de Chile.",
+      "telephone": "+56 9 4890 4545",
+      "email": "eventosukelele@gmail.com",
+      "areaServed": "Santiago de Chile",
+      "sameAs": [
+        "https://www.instagram.com/ukelele_cl/"
+      ]
+    }
+  </script>
+</head>
+
+<body>
+    <!-- Fondo decorativo global del sitio -->
+    <div class="bg-decor" aria-hidden="true">
+        <!-- Mancha decorativa 1 -->
+        <span class="blob blob--1"></span>
+
+        <!-- Mancha decorativa 2 -->
+        <span class="blob blob--2"></span>
+
+        <!-- Mancha decorativa 3 -->
+        <span class="blob blob--3"></span>
+
+        <!-- Mancha decorativa 4 -->
+        <span class="blob blob--4"></span>
+    </div>
+
+    <!-- Encabezado principal fijo -->
+    <header class="header" id="top">
+        <!-- Contenedor del header -->
+        <div class="container header__inner">
+            <!-- Logo clickeable que lleva al inicio -->
+            <a href="#hero" class="brand" aria-label="Ir al inicio">
+                <!-- Imagen del logo -->
+                <img src="./static/images/logo-1.png" alt="Logo de Ukelele Eventos" class="brand__logo" />
+            </a>
+
+            <!-- Botón hamburguesa para menú móvil -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <!-- Línea 1 del ícono -->
+                <span></span>
+
+                <!-- Línea 2 del ícono -->
+                <span></span>
+
+                <!-- Línea 3 del ícono -->
+                <span></span>
+            </button>
+
+            <!-- Navegación principal -->
+            <nav class="nav" id="mainNav">
+                <!-- Link a servicios -->
+                <a href="#servicios">Servicios</a>
+
+                <!-- Link a proceso -->
+                <a href="#proceso">Cómo funciona</a>
+
+                <!-- Link a paquetes -->
+                <a href="#paquetes">Paquetes</a>
+
+                <!-- Link a descuento -->
+                <a href="#descuento">10% OFF</a>
+
+                <!-- Link a FAQ -->
+                <a href="#faq">FAQ</a>
+
+                <!-- Botón CTA destacado -->
+                <a href="#contacto" class="nav__cta">Cotizar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección hero principal -->
+        <section class="hero section" id="hero">
+            <!-- Contenedor de la sección -->
+            <div class="container hero__grid">
+                <!-- Columna izquierda del hero -->
+                <div class="hero__content reveal">
+                    <!-- Etiqueta superior -->
+                    <p class="eyebrow">Animación infantil premium en Santiago</p>
+
+                    <!-- Título principal -->
+                    <h1>Celebra sin estrés, la diversión está asegurada con Ukelele Eventos.</h1>
+
+                    <!-- Subtítulo descriptivo -->
+                    <p class="hero__subtitle">
+                        Creamos experiencias organizadas, inclusivas y dinámicas para cumpleaños infantiles,
+                        celebraciones familiares y eventos corporativos.
+                    </p>
+
+                    <!-- Grupo de botones del hero -->
+                    <div class="hero__actions">
+                        <!-- Botón para cotizar por WhatsApp -->
+                        <a class="btn btn--primary"
+                            href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20un%20evento%20con%20Ukelele%20Eventos."
+                            target="_blank" rel="noopener noreferrer">
+                            Hablar por WhatsApp
+                        </a>
+
+                        <!-- Botón para bajar a servicios -->
+                        <a class="btn btn--secondary" href="#servicios">
+                            Ver servicios
+                        </a>
+                    </div>
+
+                    <!-- Bloque de métricas -->
+                    <div class="hero__stats">
+                        <!-- Métrica 1 -->
+                        <article class="stat-card">
+                            <strong>+150</strong>
+                            <span>eventos realizados</span>
+                        </article>
+
+                        <!-- Métrica 2 -->
+                        <article class="stat-card">
+                            <strong>+2500</strong>
+                            <span>niños participantes</span>
+                        </article>
+
+                        <!-- Métrica 3 -->
+                        <article class="stat-card">
+                            <strong>95%</strong>
+                            <span>satisfacción de clientes</span>
+                        </article>
+
+                        <!-- Métrica 4 -->
+                        <article class="stat-card">
+                            <strong>0</strong>
+                            <span>cancelaciones operativas</span>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Columna visual del hero -->
+                <div class="hero__visual reveal">
+                    <!-- Tarjeta decorativa azul -->
+                    <div class="hero-card">
+                        <!-- Personajes de marca -->
+                        <img src="./static/images/ukelelitos-1.png" alt="Personajes ilustrados de Ukelele Eventos"
+                            class="hero-card__characters" />
+        </section>
+
+        <!-- Sección de prueba social -->
+        <section class="section social-proof">
+            <!-- Contenedor -->
+            <div class="container">
+                <!-- Encabezado de sección -->
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Confianza que convierte</p>
+                    <h2>Celebraciones que se ven increíbles y se ejecutan mejor</h2>
+                    <p>
+                        Ukelele Eventos nació en 2019 con la convicción de que la diversión puede ser organizada,
+                        inclusiva y ejecutada con excelencia.
+                    </p>
+                </div>
+
+                <!-- Etiquetas tipo logos o segmentos -->
+                <div class="logos-strip reveal">
+                    <div class="logo-pill">Familias</div>
+                    <div class="logo-pill">Empresas</div>
+                    <div class="logo-pill">Colegios</div>
+                    <div class="logo-pill">Eventos privados</div>
+                    <div class="logo-pill">Celebraciones premium</div>
+                </div>
+
+                <!-- Grid de reseñas -->
+                <div class="reviews-grid">
+                    <!-- Reseña 1 -->
+                    <article class="review-card reveal">
+                        <div class="review-card__head">
+                            <div class="review-card__avatar">C</div>
+                            <div>
+                                <h3>Camila Rojas</h3>
+                                <p>★★★★★</p>
+                            </div>
+                        </div>
+                        <p>
+                            “Todo fue muy organizado. Los niños disfrutaron muchísimo y nosotros pudimos vivir
+                            el cumpleaños tranquilos.”
+                        </p>
+                    </article>
+
+                    <!-- Reseña 2 -->
+                    <article class="review-card reveal">
+                        <div class="review-card__head">
+                            <div class="review-card__avatar">A</div>
+                            <div>
+                                <h3>Andrea Silva</h3>
+                                <p>★★★★★</p>
+                            </div>
+                        </div>
+                        <p>
+                            “Se nota el profesionalismo. No solo entretienen, también ordenan el evento y hacen
+                            que todo fluya.”
+                        </p>
+                    </article>
+
+                    <!-- Reseña 3 -->
+                    <article class="review-card reveal">
+                        <div class="review-card__head">
+                            <div class="review-card__avatar">M</div>
+                            <div>
+                                <h3>Matías Herrera</h3>
+                                <p>★★★★★</p>
+                            </div>
+                        </div>
+                        <p>
+                            “Excelente energía, excelente trato y una experiencia realmente premium. Muy recomendados.”
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de servicios -->
+        <section class="section services" id="servicios">
+            <!-- Contenedor -->
+            <div class="container">
+                <!-- Encabezado -->
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Servicios</p>
+                    <h2>Todo lo necesario para una celebración inolvidable</h2>
+                    <p>
+                        Elige lo que necesitas y cotiza con nosotros por WhatsApp. Si tienes dudas, estamos para
+                        ayudarte a armar la mejor experiencia.
+                    </p>
+                </div>
+
+                <!-- Grid de servicios -->
+                <div class="services-grid">
+                    <!-- Servicio 1 -->
+                    <article class="service-card reveal">
+                        <div class="service-card__icon">🎉</div>
+                        <h3>Animación infantil profesional</h3>
+                        <p>Juegos grupales, dinámicas guiadas y conducción profesional del evento.</p>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20animación%20infantil%20profesional."
+                            class="btn btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar este servicio
+                        </a>
+                    </article>
+
+                    <!-- Servicio 2 -->
+                    <article class="service-card reveal">
+                        <div class="service-card__icon">🏢</div>
+                        <h3>Animación para eventos corporativos</h3>
+                        <p>Activaciones familiares, jornadas internas y experiencias para empresas y marcas.</p>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20animación%20para%20eventos%20corporativos."
+                            class="btn btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar este servicio
+                        </a>
+                    </article>
+
+                    <!-- Servicio 3 -->
+                    <article class="service-card reveal">
+                        <div class="service-card__icon">🎨</div>
+                        <h3>Pintacaritas y maquillaje artístico</h3>
+                        <p>Diseños creativos y profesionales para elevar la experiencia visual del evento.</p>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20pintacaritas%20y%20maquillaje%20artístico."
+                            class="btn btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar este servicio
+                        </a>
+                    </article>
+
+                    <!-- Servicio 4 -->
+                    <article class="service-card reveal">
+                        <div class="service-card__icon">🧩</div>
+                        <h3>Talleres creativos</h3>
+                        <p>Actividades participativas que conectan creatividad, juego y experiencia.</p>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20talleres%20creativos."
+                            class="btn btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar este servicio
+                        </a>
+                    </article>
+
+                    <!-- Servicio 5 -->
+                    <article class="service-card reveal">
+                        <div class="service-card__icon">🌟</div>
+                        <h3>Animaciones temáticas</h3>
+                        <p>Experiencias personalizadas según temática, personaje o universo del evento.</p>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20animaciones%20temáticas."
+                            class="btn btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar este servicio
+                        </a>
+                    </article>
+
+                    <!-- Servicio 6 -->
+                    <article class="service-card reveal">
+                        <div class="service-card__icon">🍭</div>
+                        <h3>Estaciones de snacks y dulces</h3>
+                        <p>Complementos ideales para sumar valor visual y experiencia al evento.</p>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20estaciones%20de%20snacks%20y%20dulces."
+                            class="btn btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar este servicio
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección del proceso -->
+        <section class="section process" id="proceso">
+            <!-- Contenedor -->
+            <div class="container">
+                <!-- Encabezado -->
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Cómo funciona</p>
+                    <h2>Un proceso simple para reservar sin enredos</h2>
+                    <p>
+                        Menos fricción, más avance. Así debería operar una experiencia premium.
+                    </p>
+                </div>
+
+                <!-- Grid del proceso -->
+                <div class="process-grid">
+                    <!-- Paso 1 -->
+                    <article class="process-card reveal">
+                        <span class="process-card__number">1</span>
+                        <h3>Cuéntanos tu evento</h3>
+                        <p>Fecha, comuna, cantidad de niños y tipo de celebración.</p>
+                    </article>
+
+                    <!-- Paso 2 -->
+                    <article class="process-card reveal">
+                        <span class="process-card__number">2</span>
+                        <h3>Recibe tu propuesta</h3>
+                        <p>Te orientamos con el servicio ideal y una cotización clara.</p>
+                    </article>
+
+                    <!-- Paso 3 -->
+                    <article class="process-card reveal">
+                        <span class="process-card__number">3</span>
+                        <h3>Reserva tu fecha</h3>
+                        <p>Confirmas y dejamos todo encaminado para tu celebración.</p>
+                    </article>
+
+                    <!-- Paso 4 -->
+                    <article class="process-card reveal">
+                        <span class="process-card__number">4</span>
+                        <h3>Disfruta el evento</h3>
+                        <p>Nosotros guiamos la experiencia para que tú vivas la celebración con tranquilidad.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de paquetes -->
+        <section class="section packages" id="paquetes">
+            <!-- Contenedor -->
+            <div class="container">
+                <!-- Encabezado -->
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Paquetes</p>
+                    <h2>Opciones claras para decidir más rápido</h2>
+                    <p>
+                        Cuando la propuesta se entiende, la conversión respira.
+                    </p>
+                </div>
+
+                <!-- Grid de paquetes -->
+                <div class="packages-grid">
+                    <!-- Paquete 1 -->
+                    <article class="package-card reveal">
+                        <p class="package-card__tag">Básico</p>
+                        <h3>Plan Inicio</h3>
+                        <ul>
+                            <li>Animación infantil</li>
+                            <li>Juegos grupales</li>
+                            <li>Duración 1 hora</li>
+                        </ul>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20el%20Plan%20Inicio."
+                            class="btn btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar paquete
+                        </a>
+                    </article>
+
+                    <!-- Paquete 2 -->
+                    <article class="package-card package-card--featured reveal">
+                        <p class="package-card__tag">Más elegido</p>
+                        <h3>Fiesta Completa</h3>
+                        <ul>
+                            <li>Animación infantil</li>
+                            <li>Pintacaritas</li>
+                            <li>Juegos interactivos</li>
+                            <li>Duración 2 horas</li>
+                        </ul>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20el%20paquete%20Fiesta%20Completa."
+                            class="btn btn--light btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar paquete
+                        </a>
+                    </article>
+
+                    <!-- Paquete 3 -->
+                    <article class="package-card reveal">
+                        <p class="package-card__tag">Premium</p>
+                        <h3>Experiencia Total</h3>
+                        <ul>
+                            <li>Animación completa</li>
+                            <li>Pintacaritas profesional</li>
+                            <li>Taller creativo</li>
+                            <li>Estación de snacks</li>
+                        </ul>
+                        <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20el%20paquete%20Experiencia%20Total."
+                            class="btn btn--small" target="_blank" rel="noopener noreferrer">
+                            Cotizar paquete
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección galería estilo Instagram -->
+        <section class="section instagram-gallery" id="galeria">
+            <!-- Contenedor principal -->
+            <div class="container">
+                <!-- Encabezado de sección -->
+                <div class="section-heading reveal">
+                    <!-- Etiqueta superior -->
+                    <p class="eyebrow">GALERÍA</p>
+
+                    <!-- Título principal -->
+                    <h2>Momentos reales de eventos inolvidables.</h2>
+
+                    <!-- Texto descriptivo -->
+                    <p>
+                        Descubre cómo se viven nuestros eventos a través de experiencias reales compartidas en
+                        Instagram.
+                    </p>
+                </div>
+
+                <!-- Cabecera tipo perfil de Instagram -->
+                <div class="instagram-profile reveal">
+                    <!-- Avatar / logo -->
+                    <div class="instagram-profile__avatar">
+                        <img src="./static/images/logo-1.png" alt="Logo de Ukelele Eventos" />
+                    </div>
+
+                    <!-- Información del perfil -->
+                    <div class="instagram-profile__info">
+                        <h3>@ukelele_cl</h3>
+                        <p>Animación infantil premium, pintacaritas, talleres y celebraciones inolvidables.</p>
+                    </div>
+
+                    <!-- Botón para ir al perfil -->
+                    <a href="https://www.instagram.com/ukelele_cl/" target="_blank" rel="noopener noreferrer"
+                        class="btn btn--secondary">
+                        Ver perfil en Instagram
+                    </a>
+                </div>
+
+                <!-- Grid de publicaciones -->
+                <div class="instagram-feed-grid">
+                    <!-- Post 1 -->
+                    <a href="https://www.instagram.com/p/DTQrnc0D5sp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                        target="_blank" rel="noopener noreferrer" class="instagram-post-card reveal"
+                        aria-label="Abrir publicación 1 en Instagram">
+                        <!-- Imagen miniatura del post -->
+                        <img src="./static/images/imagen-spa-galeria.png"
+                            alt="Publicación de Instagram 1 de Ukelele Eventos" />
+
+                        <!-- Overlay visual -->
+                        <div class="instagram-post-card__overlay">
+                            <span>Ver publicación</span>
+                        </div>
+                    </a>
+
+                    <!-- Post 2 -->
+                    <a href="https://www.instagram.com/reel/DVo0JGLj0QQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                        target="_blank" rel="noopener noreferrer" class="instagram-post-card reveal"
+                        aria-label="Abrir publicación 2 en Instagram">
+                        <img src="./static/images/portada-2.png" alt="Publicación de Instagram 2 de Ukelele Eventos" />
+                        <div class="instagram-post-card__overlay">
+                            <span>Ver publicación</span>
+                        </div>
+                    </a>
+
+                    <!-- Post 3 -->
+                    <a href="https://www.instagram.com/p/DB2YfTFxkMJ/?img_index=1" target="_blank"
+                        rel="noopener noreferrer" class="instagram-post-card reveal"
+                        aria-label="Abrir publicación 3 en Instagram">
+                        <img src="./static/images/portada-4.png" alt="Publicación de Instagram 3 de Ukelele Eventos" />
+                        <div class="instagram-post-card__overlay">
+                            <span>Ver publicación</span>
+                        </div>
+                    </a>
+
+                    <!-- AGREGAR MÁS POST (en total deben ser 6)-->
+
+                    <!-- CTA inferior -->
+                    <div class="instagram-gallery__cta reveal">
+                        <a href="https://www.instagram.com/ukelele_cl/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn--primary">
+                            Ver más publicaciones en Instagram
+                        </a>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Sección de captura de lead con descuento -->
+        <section class="section discount-lead" id="descuento">
+            <!-- Contenedor -->
+            <div class="container">
+                <!-- Caja principal -->
+                <div class="discount-box reveal">
+                    <!-- Columna de contenido -->
+                    <div class="discount-box__content">
+                        <p class="eyebrow eyebrow--light">Beneficio exclusivo</p>
+                        <h2>Obtén un 10% de descuento en tu evento</h2>
+                        <p>
+                            Déjanos tu correo y recibe un beneficio especial para avanzar con tu cotización.
+                            Luego podrás usar tu descuento directamente por WhatsApp.
+                        </p>
+
+                        <!-- Lista de beneficios -->
+                        <ul class="discount-list">
+                            <li>Descuento aplicable a tu cotización</li>
+                            <li>Prioridad de contacto</li>
+                            <li>Proceso rápido y simple</li>
+                        </ul>
+                    </div>
+
+                    <!-- Formulario -->
+                    <form class="discount-form" id="discountForm" novalidate>
+                        <!-- Honeypot oculto para filtrar bots -->
+                        <input type="text" id="website" name="website" class="hidden-field" tabindex="-1"
+                            autocomplete="off" />
+
+                        <!-- Campo nombre -->
+                        <div class="form-group">
+                            <label for="discountName">Nombre</label>
+                            <input type="text" id="discountName" name="discountName" placeholder="Tu nombre" required />
+                        </div>
+
+                        <!-- Campo email -->
+                        <div class="form-group">
+                            <label for="discountEmail">Correo electrónico</label>
+                            <input type="email" id="discountEmail" name="discountEmail" placeholder="tunombre@email.com"
+                                required />
+                        </div>
+
+                        <!-- Checkbox de consentimiento -->
+                        <label class="checkbox">
+                            <input type="checkbox" id="discountConsent" required />
+                            <span>Acepto recibir información comercial y mi descuento.</span>
+                        </label>
+
+                        <!-- Botón de envío -->
+                        <button type="submit" class="btn btn--white btn--full" id="discountSubmit">
+                            Quiero mi 10% de descuento
+                        </button>
+
+                        <!-- Mensaje dinámico del formulario -->
+                        <p class="form-message" id="formMessage" aria-live="polite"></p>
+
+                        <!-- Bloque de éxito mostrado tras enviar -->
+                        <div class="discount-success" id="discountSuccess" hidden>
+                            <!-- Texto del código -->
+                            <p class="discount-success__code">
+                                Tu código de descuento es: <strong id="discountCodeText">UKEWEB-10</strong>
+                            </p>
+
+                            <!-- Botón con WhatsApp prellenado -->
+                            <a href="#" id="discountWhatsappBtn" class="btn btn--primary btn--full" target="_blank"
+                                rel="noopener noreferrer">
+                                Usar descuento por WhatsApp
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección FAQ -->
+        <section class="section faq" id="faq">
+            <!-- Contenedor -->
+            <div class="container">
+                <!-- Encabezado -->
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Preguntas frecuentes</p>
+                    <h2>Respuestas claras para tus dudas más comunes</h2>
+                </div>
+
+                <!-- Lista de FAQs -->
+                <div class="faq-list">
+                    <!-- FAQ 1 -->
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button">
+                            ¿Con cuánto tiempo de anticipación debo reservar?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Mientras antes, mejor. Así aseguras disponibilidad y una mejor planificación del evento.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- FAQ 2 -->
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button">
+                            ¿Trabajan solo cumpleaños infantiles?
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. También realizamos eventos familiares, corporativos, activaciones y celebraciones
+                                privadas.</p>
+                        </div>
+                    </article>
+
+                    <!-- FAQ 3 -->
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button">
+                            ¿Pueden adaptar el servicio a una temática?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí. Podemos personalizar la experiencia según temática, tipo de público y dinámica del
+                                evento.</p>
+                        </div>
+                    </article>
+
+                    <!-- FAQ 4 -->
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button">
+                            ¿Atienden fuera de Santiago?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Principalmente trabajamos en Santiago, pero dependiendo del evento podemos evaluar otras
+                                zonas.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA final -->
+        <section class="section cta-final" id="contacto">
+            <!-- Contenedor -->
+            <div class="container">
+                <!-- Caja del CTA -->
+                <div class="cta-final__box reveal">
+                    <!-- Texto del CTA -->
+                    <div>
+                        <p class="eyebrow eyebrow--light">Agenda tu fecha</p>
+                        <h2>Transforma tu celebración en una experiencia inolvidable</h2>
+                        <p>
+                            Escríbenos por WhatsApp y recibe una cotización rápida para tu cumpleaños,
+                            evento familiar o activación corporativa.
+                        </p>
+                    </div>
+
+                    <!-- Acción principal -->
+                    <div class="cta-final__actions">
+                        <a class="btn btn--white"
+                            href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20un%20evento%20con%20Ukelele%20Eventos."
+                            target="_blank" rel="noopener noreferrer">
+                            Cotizar evento por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <!-- Contenedor -->
+        <div class="container footer__grid">
+            <!-- Columna 1 -->
+            <div>
+                <h3>Ukelele Eventos SPA</h3>
+                <p>Animación infantil premium, organizada e inclusiva para celebraciones en Santiago.</p>
+            </div>
+
+            <!-- Columna 2 -->
+            <div>
+                <h4>Contacto</h4>
+                <p><a href="tel:+56948904545">+56 9 4890 4545</a></p>
+                <p><a href="mailto:eventosukelele@gmail.com">eventosukelele@gmail.com</a></p>
+                <p><a href="https://www.instagram.com/ukelele_cl/" target="_blank"
+                        rel="noopener noreferrer">@ukelele_cl</a></p>
+            </div>
+
+            <!-- Columna 3 -->
+            <div>
+                <h4>Secciones</h4>
+                <p><a href="#servicios">Servicios</a></p>
+                <p><a href="#paquetes">Paquetes</a></p>
+                <p><a href="#descuento">Descuento</a></p>
+                <p><a href="#faq">FAQ</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a class="floating-whatsapp"
+        href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20un%20evento%20con%20Ukelele%20Eventos."
+        target="_blank" rel="noopener noreferrer" aria-label="Hablar por WhatsApp">
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- Lightbox para futuras imágenes ampliadas -->
+    <div class="lightbox" id="lightbox">
+        <!-- Botón para cerrar el lightbox -->
+        <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar imagen ampliada">×</button>
+
+        <!-- Imagen que se mostrará ampliada -->
+        <img id="lightboxImage" src="" alt="Imagen ampliada" />
+    </div>
+
+    <!-- URL pública del Apps Script -->
+    <script>
+        window.GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmrEv3pVRxfxKRZdLAxvut72khjDIfLtsPrqupr2SPrwKxd0-4cUMNL-yq2s4DfL7n/exec";
+    </script>
+
+    <!-- Script principal del sitio -->
+    <script src="./static/js/script.js"></script>
+</body>
+
+</html>
