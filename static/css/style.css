@@ -1797,10 +1797,6 @@ input {
         display: flex;
     }
 
-    .services-grid,
-    .packages-grid,
-    .reviews-grid,
-    .process-grid,
     .hero__stats {
         /* Una sola columna */
         grid-template-columns: 1fr;
@@ -1831,6 +1827,65 @@ input {
         /* Reduce tamaño del logo */
         height: 50px;
     }
+
+    /* ========================================= */
+    /* CARRUSELES MÓVILES (MAGIA SCROLL SNAP)    */
+    /* ========================================= */
+    .services-grid,
+    .packages-grid,
+    .process-grid {
+        /* Cambiamos de Grid a Flexbox para alinearlos en fila */
+        display: flex;
+
+        /* Permitimos el scroll horizontal */
+        overflow-x: auto;
+
+        /* Activamos el "imán" para que las tarjetas se centren solas */
+        scroll-snap-type: x mandatory;
+
+        /* Espaciado interno para que no se corten las sombras */
+        padding-bottom: 24px;
+        padding-top: 10px;
+
+        /* Oculta la barra de scroll fea en Firefox */
+        scrollbar-width: none;
+    }
+
+    /* Oculta la barra de scroll en Chrome y Safari */
+    .services-grid::-webkit-scrollbar,
+    .packages-grid::-webkit-scrollbar,
+    .process-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-card,
+    .package-card,
+    .process-card {
+        /* Cada tarjeta ocupará el 85% de la pantalla, dejando asomar la siguiente */
+        min-width: 85%;
+
+        /* Evita que se encojan */
+        flex-shrink: 0;
+
+        /* El "imán" las centra perfectamente en la pantalla */
+        scroll-snap-align: center;
+    }
+
+    /* ========================================= */
+    /* MEJORA UX: BOTONES HERO MÓVIL             */
+    /* ========================================= */
+    .hero__actions {
+        /* Cambia la dirección de fila a columna */
+        flex-direction: column;
+
+        /* Asegura que el contenedor tome todo el ancho disponible */
+        width: 100%;
+    }
+
+    .hero__actions .btn {
+        /* Obliga a cada botón a estirarse al 100% de la pantalla */
+        width: 100%;
+    }
 }
 
 /* ============================== */
@@ -1851,15 +1906,18 @@ input {
     /* Esto permite scroll horizontal suave en móvil */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Oculta barra en Firefox */
+    scrollbar-width: none;
+    /* Oculta barra en Firefox */
 }
 
 .reviews-slider::-webkit-scrollbar {
-    display: none; /* Oculta barra en Chrome/Safari */
+    display: none;
+    /* Oculta barra en Chrome/Safari */
 }
 
 .review-card {
-    min-width: 320px; /* Tamaño fijo para el slider */
+    min-width: 320px;
+    /* Tamaño fijo para el slider */
     scroll-snap-align: center;
     background: var(--white);
     padding: 30px;
@@ -1875,7 +1933,8 @@ input {
 }
 
 .stars {
-    color: #FBBF24; /* Dorado Google */
+    color: #FBBF24;
+    /* Dorado Google */
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
