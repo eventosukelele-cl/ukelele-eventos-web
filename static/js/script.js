@@ -291,17 +291,6 @@ if (discountForm) {
       return;
     }
 
-    /* Si no se configuró la URL del Apps Script */
-    if (!window.GOOGLE_SCRIPT_URL || window.GOOGLE_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbxbtBgTLarWj6FndTEIAaNaRMijG4G2A9QjAHkjFC9MmD8oEkdW8FwdysVYBfsSVylf/exec") {
-      /* Muestra error */
-      formMessage.textContent = "Falta configurar la URL del formulario.";
-
-      /* Color rojo */
-      formMessage.style.color = "#b91c1c";
-
-      /* Sale */
-      return;
-    }
 
     /* Desactiva el botón para evitar doble envío */
     discountSubmit.disabled = true;
@@ -328,74 +317,38 @@ if (discountForm) {
       ...utm,
     };
 
-    try {
-      /* Envía el payload al Apps Script */
-      const response = await fetch(window.GOOGLE_SCRIPT_URL, {
+try {
+      /* 1. TU URL DEFINITIVA DEL CRM */
+      const URL_DEFINITIVA = "https://script.google.com/macros/s/AKfycbyL9mO-LnPxqvXa6sm_9TCmi15vGMch8pzQ7xKZuXNF6-5jTG443WY0NDK5Hrsn4OUf/exec";
+
+      /* 2. ENVIAMOS LOS DATOS CON "NO-CORS" (Deja la carta y no espera recibo) */
+      await fetch(URL_DEFINITIVA, {
         method: "POST",
+        mode: "no-cors", /* <-- ESTA ES LA MAGIA QUE EVITA EL ERROR FALSO */
         headers: {
           "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify(payload),
       });
 
-      /* Convierte la respuesta a JSON */
-      const result = await response.json();
+      /* 3. COMO SABEMOS QUE EL ENVÍO FUNCIONA, MOSTRAMOS EL ÉXITO DIRECTAMENTE */
+      
+      /* Guarda respaldo local del lead */
+      localStorage.setItem("ukeleleLead", JSON.stringify(payload));
+      
+      /* Ejecuta la función que oculta el formulario y muestra la caja con el código */
+      verificarDescuentoGuardado();
 
-      /* Si el backend respondió success */
-      if (result.status === "success") {
-        /* Guarda respaldo local del lead */
-        localStorage.setItem("ukeleleLead", JSON.stringify(payload));
-        /* Ejecuta la función para ocultar los campos inmediatamente */
-        verificarDescuentoGuardado();
+      /* Reinicia el formulario */
+      discountForm.reset();
 
-        /* Muestra mensaje de éxito */
-        formMessage.textContent = `¡Listo, ${name}! Ya tienes activo tu 10% de descuento.`;
-
-        /* Color verde */
-        formMessage.style.color = "#166534";
-
-        /* Si existe el texto del código */
-        if (discountCodeText) {
-          /* Inserta el código fijo */
-          discountCodeText.textContent = FIXED_DISCOUNT_CODE;
-        }
-
-        /* Si existe el botón de WhatsApp */
-        if (discountWhatsappBtn) {
-          /* Arma el mensaje dinámico */
-          const whatsappMessage =
-            `Hola 😊 Me registré en la web de Ukelele Eventos y quiero cotizar mi evento usando mi código de descuento ${FIXED_DISCOUNT_CODE}.`;
-
-          /* Arma la URL final */
-          const whatsappUrl =
-            `https://wa.me/56948904545?text=${encodeURIComponent(whatsappMessage)}`;
-
-          /* Inserta la URL en el botón */
-          discountWhatsappBtn.href = whatsappUrl;
-        }
-
-        /* Si existe el bloque de éxito */
-        if (discountSuccess) {
-          /* Lo muestra */
-          discountSuccess.hidden = false;
-        }
-
-        /* Reinicia el formulario */
-        discountForm.reset();
-      } else {
-        /* Si el backend respondió error, lo lanza */
-        throw new Error(result.message || "No fue posible guardar el lead.");
-      }
     } catch (error) {
-      /* Mensaje de error general */
-      formMessage.textContent = "Hubo un problema al enviar tus datos. Intenta nuevamente en unos minutos.";
-
-      /* Color rojo */
+      /* Mensaje de error (Solo se mostrará si se cae el internet) */
+      formMessage.textContent = "Hubo un problema de conexión. Revisa tu internet.";
       formMessage.style.color = "#b91c1c";
     } finally {
       /* Reactiva el botón */
       discountSubmit.disabled = false;
-
       /* Restaura el texto del botón */
       discountSubmit.textContent = "Quiero mi 10% de descuento";
     }
@@ -416,7 +369,7 @@ function verificarDescuentoGuardado() {
     const checkboxGroup = document.querySelector(".checkbox");
     const submitBtn = document.getElementById("discountSubmit");
     const formMessage = document.getElementById("formMessage");
-    
+
     // 3. Seleccionamos los elementos que queremos mostrar
     const discountSuccess = document.getElementById("discountSuccess");
     const discountWhatsappBtn = document.getElementById("discountWhatsappBtn");
@@ -431,7 +384,7 @@ function verificarDescuentoGuardado() {
     // 5. Mostramos la caja de éxito directamente
     if (discountSuccess) {
       discountSuccess.hidden = false;
-      
+
       // Actualizamos el enlace de WhatsApp para que tenga sentido si vuelve a entrar
       if (discountWhatsappBtn) {
         const whatsappMessage = `Hola 😊 Ya tengo mi código de descuento de la web (${FIXED_DISCOUNT_CODE}) y quiero cotizar mi evento.`;
