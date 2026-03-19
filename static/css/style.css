@@ -1167,99 +1167,6 @@ input {
     color: var(--text-soft);
 }
 
-.instagram-feed-grid {
-    /* Grid de 3 columnas */
-    display: grid;
-
-    /* Reparto */
-    grid-template-columns: repeat(3, 1fr);
-
-    /* Espaciado entre tarjetas */
-    gap: 18px;
-}
-
-.instagram-post-card {
-    /* Posición relativa para overlay */
-    position: relative;
-
-    /* Bordes suaves */
-    border-radius: 24px;
-
-    /* Oculta contenido excedente */
-    overflow: hidden;
-
-    /* Sombra */
-    box-shadow: var(--shadow);
-
-    /* Fondo blanco */
-    background: var(--white);
-
-    /* Transición */
-    transition: var(--transition);
-}
-
-.instagram-post-card:hover {
-    /* Leve elevación */
-    transform: translateY(-6px);
-}
-
-.instagram-post-card img {
-    /* Ocupar ancho total */
-    width: 100%;
-
-    /* Alto uniforme */
-    height: 320px;
-
-    /* Ajuste visual */
-    object-fit: cover;
-
-    /* Transición suave */
-    transition: var(--transition);
-}
-
-.instagram-post-card:hover img {
-    /* Zoom leve */
-    transform: scale(1.04);
-}
-
-.instagram-post-card__overlay {
-    /* Capa superior */
-    position: absolute;
-
-    /* Ocupar toda la tarjeta */
-    inset: 0;
-
-    /* Fondo oscuro translúcido */
-    background: linear-gradient(to top,
-            rgba(16, 32, 79, 0.72),
-            rgba(16, 32, 79, 0.12));
-
-    /* Centrado del texto */
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    /* Espaciado */
-    padding: 20px;
-
-    /* Texto blanco */
-    color: var(--white);
-
-    /* Peso */
-    font-weight: 800;
-
-    /* Opacidad inicial */
-    opacity: 0;
-
-    /* Transición */
-    transition: var(--transition);
-}
-
-.instagram-post-card:hover .instagram-post-card__overlay {
-    /* Muestra overlay al pasar el mouse */
-    opacity: 1;
-}
-
 .instagram-gallery__cta {
     /* Centra el botón final */
     text-align: center;
@@ -1278,23 +1185,6 @@ input {
 
         /* Alinea a la izquierda */
         justify-items: start;
-    }
-
-    .instagram-feed-grid {
-        /* Dos columnas en tablet */
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .instagram-feed-grid {
-        /* Una columna en móvil */
-        grid-template-columns: 1fr;
-    }
-
-    .instagram-post-card img {
-        /* Reduce altura en móvil */
-        height: 280px;
     }
 }
 
