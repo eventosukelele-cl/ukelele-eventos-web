@@ -195,77 +195,68 @@
                     <div class="hero-card">
                         <!-- Personajes de marca -->
                         <img src="./static/images/ukelelitos-1.png" alt="Personajes ilustrados de Ukelele Eventos"
-                            class="hero-card__characters" />
+                            class="hero-card__characters" loading="lazy" />
         </section>
 
         <!-- Sección de prueba social -->
         <section class="section social-proof">
             <!-- Contenedor -->
-            <div class="container">
-                <!-- Encabezado de sección -->
-                <div class="section-heading reveal">
-                    <p class="eyebrow">Confianza que convierte</p>
-                    <h2>Celebraciones que se ven increíbles y se ejecutan mejor</h2>
-                    <p>
-                        Ukelele Eventos nació en 2019 con la convicción de que la diversión puede ser organizada,
-                        inclusiva y ejecutada con excelencia.
-                    </p>
-                </div>
-
-                <!-- Etiquetas tipo logos o segmentos -->
-                <div class="logos-strip reveal">
-                    <div class="logo-pill">Familias</div>
-                    <div class="logo-pill">Empresas</div>
-                    <div class="logo-pill">Colegios</div>
-                    <div class="logo-pill">Eventos privados</div>
-                    <div class="logo-pill">Celebraciones premium</div>
-                </div>
-
-                <!-- Grid de reseñas -->
-                <div class="reviews-grid">
-                    <!-- Reseña 1 -->
-                    <article class="review-card reveal">
+            <div class="reviews-container reveal">
+                <div class="reviews-slider">
+                    <article class="review-card">
                         <div class="review-card__head">
                             <div class="review-card__avatar">C</div>
                             <div>
-                                <h3>Camila Rojas</h3>
-                                <p>★★★★★</p>
+                                <h3>Katherinne Campos</h3>
+                                <p class="stars">★★★★★</p>
                             </div>
                         </div>
-                        <p>
-                            “Todo fue muy organizado. Los niños disfrutaron muchísimo y nosotros pudimos vivir
-                            el cumpleaños tranquilos.”
-                        </p>
+                        <p>"Recomendadisimo!
+                            Animadoras con mucha energia, entrenidas, con un muy buen manejo con los niños de todas las
+                            edades. Los pintacaritas son buenísimos. Llevo 3 años contratandolas y ha sido siempre un
+                            exito.
+                            Tienen varias opciones de animación para todas las edades.
+                            Te vas a la segura con ellas, porque los niños terminan cansadisimos y felices."</p>
                     </article>
 
-                    <!-- Reseña 2 -->
-                    <article class="review-card reveal">
+                    <article class="review-card">
                         <div class="review-card__head">
                             <div class="review-card__avatar">A</div>
                             <div>
-                                <h3>Andrea Silva</h3>
-                                <p>★★★★★</p>
+                                <h3>Joselyn Torrivilla</h3>
+                                <p class="stars">★★★★★</p>
                             </div>
                         </div>
-                        <p>
-                            “Se nota el profesionalismo. No solo entretienen, también ordenan el evento y hacen
-                            que todo fluya.”
+                        <p>“Han estado presente en los últimos 4 cumpleaños de mi hijo y no duraría en llamarlas de
+                            nuevo y hacerlas parte de cada celebración. Son maravillosas, atentas, preocupadas, felices
+                            y muy animadas. Ofrecen servicios de mucha calidad y también mucha variedad.
+                            Gracias chicas por siempre estar ❤️ y sigan cosechando mucho éxito. Las queremos mucho 😊”
                         </p>
                     </article>
 
-                    <!-- Reseña 3 -->
-                    <article class="review-card reveal">
+                    <article class="review-card">
                         <div class="review-card__head">
                             <div class="review-card__avatar">M</div>
                             <div>
-                                <h3>Matías Herrera</h3>
-                                <p>★★★★★</p>
+                                <h3>Jocelyn Zapata Aliste</h3>
+                                <p class="stars">★★★★★</p>
                             </div>
                         </div>
-                        <p>
-                            “Excelente energía, excelente trato y una experiencia realmente premium. Muy recomendados.”
+                        <p>“El servicio que ofrecen es cercano y profesional, los niños se sienten cómodos y felices con
+                            los resultados de su trabajo!
+                            Es un alivio como familia poder contar este servicio ya que la dinámica de la celebración
+                            fluye perfectamente con todos los invitados unidos.
+                            Por cierto, los maquillajes son perfectamente hermosos !”
                         </p>
                     </article>
+                </div>
+
+                <div class="google-badge reveal">
+                    <p>Calificados con 5 ★ estrellas en Google por nuestros clientes</p>
+                    <a href="https://www.google.com/maps/place/Ukelele+Eventos/@-33.4727879,-70.6298313,11z/data=!4m8!3m7!1s0x2f9a94e8af771f09:0xce76aa62dd376d0d!8m2!3d-33.472788!4d-70.6298313!9m1!1b1!16s%2Fg%2F11n4qkcy7v?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDMxNy4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                        Ver todas las reseñas en Google
+                    </a>
                 </div>
             </div>
         </section>
@@ -489,7 +480,7 @@
                 <div class="instagram-profile reveal">
                     <!-- Avatar / logo -->
                     <div class="instagram-profile__avatar">
-                        <img src="./static/images/logo-1.png" alt="Logo de Ukelele Eventos" />
+                        <img src="./static/images/logo-1.png" alt="Logo de Ukelele Eventos" loading="lazy"/>
                     </div>
 
                     <!-- Información del perfil -->
@@ -506,50 +497,18 @@
                 </div>
 
                 <!-- Grid de publicaciones -->
-                <div class="instagram-feed-grid">
-                    <!-- Post 1 -->
-                    <a href="https://www.instagram.com/p/DTQrnc0D5sp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-                        target="_blank" rel="noopener noreferrer" class="instagram-post-card reveal"
-                        aria-label="Abrir publicación 1 en Instagram">
-                        <!-- Imagen miniatura del post -->
-                        <img src="./static/images/imagen-spa-galeria.png"
-                            alt="Publicación de Instagram 1 de Ukelele Eventos" />
+                <div class="instagram-feed-dynamic">
+                    
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-dafe1373-8855-4b98-8634-c43b27227094" data-elfsight-app-lazy></div>
 
-                        <!-- Overlay visual -->
-                        <div class="instagram-post-card__overlay">
-                            <span>Ver publicación</span>
-                        </div>
-                    </a>
-
-                    <!-- Post 2 -->
-                    <a href="https://www.instagram.com/reel/DVo0JGLj0QQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-                        target="_blank" rel="noopener noreferrer" class="instagram-post-card reveal"
-                        aria-label="Abrir publicación 2 en Instagram">
-                        <img src="./static/images/portada-2.png" alt="Publicación de Instagram 2 de Ukelele Eventos" />
-                        <div class="instagram-post-card__overlay">
-                            <span>Ver publicación</span>
-                        </div>
-                    </a>
-
-                    <!-- Post 3 -->
-                    <a href="https://www.instagram.com/p/DB2YfTFxkMJ/?img_index=1" target="_blank"
-                        rel="noopener noreferrer" class="instagram-post-card reveal"
-                        aria-label="Abrir publicación 3 en Instagram">
-                        <img src="./static/images/portada-4.png" alt="Publicación de Instagram 3 de Ukelele Eventos" />
-                        <div class="instagram-post-card__overlay">
-                            <span>Ver publicación</span>
-                        </div>
-                    </a>
-
-                    <!-- AGREGAR MÁS POST (en total deben ser 6)-->
-
-                    <!-- CTA inferior -->
                     <div class="instagram-gallery__cta reveal">
                         <a href="https://www.instagram.com/ukelele_cl/" target="_blank" rel="noopener noreferrer"
                             class="btn btn--primary">
                             Ver más publicaciones en Instagram
                         </a>
                     </div>
+                    
                 </div>
         </section>
 
@@ -758,7 +717,7 @@
         <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar imagen ampliada">×</button>
 
         <!-- Imagen que se mostrará ampliada -->
-        <img id="lightboxImage" src="" alt="Imagen ampliada" />
+        <img id="lightboxImage" src="" alt="Imagen ampliada" loading="lazy" />
     </div>
 
     <!-- URL pública del Apps Script -->

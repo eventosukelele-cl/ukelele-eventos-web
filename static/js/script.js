@@ -334,6 +334,8 @@ if (discountForm) {
       if (result.status === "success") {
         /* Guarda respaldo local del lead */
         localStorage.setItem("ukeleleLead", JSON.stringify(payload));
+        /* Ejecuta la función para ocultar los campos inmediatamente */
+        verificarDescuentoGuardado();
 
         /* Muestra mensaje de éxito */
         formMessage.textContent = `¡Listo, ${name}! Ya tienes activo tu 10% de descuento.`;
@@ -388,3 +390,45 @@ if (discountForm) {
     }
   });
 }
+
+/* ====================================== */
+/* ESTADO DEL FORMULARIO DE DESCUENTO     */
+/* ====================================== */
+function verificarDescuentoGuardado() {
+  // 1. Buscamos si existe el registro previo en la memoria del navegador
+  const leadGuardado = localStorage.getItem("ukeleleLead");
+
+  // Si existe el registro, ejecutamos la lógica
+  if (leadGuardado) {
+    // 2. Seleccionamos los elementos que queremos ocultar (inputs y botón)
+    const formGroups = document.querySelectorAll(".form-group");
+    const checkboxGroup = document.querySelector(".checkbox");
+    const submitBtn = document.getElementById("discountSubmit");
+    const formMessage = document.getElementById("formMessage");
+    
+    // 3. Seleccionamos los elementos que queremos mostrar
+    const discountSuccess = document.getElementById("discountSuccess");
+    const discountWhatsappBtn = document.getElementById("discountWhatsappBtn");
+    const FIXED_DISCOUNT_CODE = "UKEWEB-10";
+
+    // 4. Ocultamos los campos para que la caja quede limpia
+    formGroups.forEach(group => group.style.display = "none");
+    if (checkboxGroup) checkboxGroup.style.display = "none";
+    if (submitBtn) submitBtn.style.display = "none";
+    if (formMessage) formMessage.style.display = "none";
+
+    // 5. Mostramos la caja de éxito directamente
+    if (discountSuccess) {
+      discountSuccess.hidden = false;
+      
+      // Actualizamos el enlace de WhatsApp para que tenga sentido si vuelve a entrar
+      if (discountWhatsappBtn) {
+        const whatsappMessage = `Hola 😊 Ya tengo mi código de descuento de la web (${FIXED_DISCOUNT_CODE}) y quiero cotizar mi evento.`;
+        discountWhatsappBtn.href = `https://wa.me/56948904545?text=${encodeURIComponent(whatsappMessage)}`;
+      }
+    }
+  }
+}
+
+// 6. Le decimos al navegador que ejecute esta revisión apenas termine de cargar la página
+document.addEventListener("DOMContentLoaded", verificarDescuentoGuardado);
