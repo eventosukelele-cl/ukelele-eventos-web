@@ -292,7 +292,7 @@ if (discountForm) {
     }
 
     /* Si no se configuró la URL del Apps Script */
-    if (!window.GOOGLE_SCRIPT_URL || window.GOOGLE_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbwPheCG7KAlrT7JsepTtEuzRL3OoYTIRfWM9wiOTDTct9HCM5feUhGk5pw1xSlwsUsl/exec") {
+    if (!window.GOOGLE_SCRIPT_URL || window.GOOGLE_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbyi3HgOFfqml2DB--qWEsu8LUc52oMKwtG-mzirOMfnCD0vr3qhw3LCeynL9SbruTfp/exec") {
       /* Muestra error */
       formMessage.textContent = "Falta configurar la URL del formulario.";
 
