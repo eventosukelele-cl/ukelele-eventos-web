@@ -212,6 +212,9 @@ if (discountForm) {
     /* Obtiene el valor del nombre */
     const name = document.getElementById("discountName").value.trim();
 
+    /* Obtiene el valor del teléfono (NUEVO) */
+    const phone = document.getElementById("discountPhone").value.trim();
+
     /* Obtiene el valor del email */
     const email = document.getElementById("discountEmail").value.trim();
 
@@ -257,6 +260,13 @@ if (discountForm) {
       return;
     }
 
+    /* Si falta el teléfono */
+    if (!phone) {
+      formMessage.textContent = "Por favor, ingresa tu número de teléfono.";
+      formMessage.style.color = "#b91c1c";
+      return;
+    }
+
     /* Si el email no es válido */
     if (!emailPattern.test(email)) {
       /* Muestra error */
@@ -282,7 +292,7 @@ if (discountForm) {
     }
 
     /* Si no se configuró la URL del Apps Script */
-    if (!window.GOOGLE_SCRIPT_URL || window.GOOGLE_SCRIPT_URL === "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT") {
+    if (!window.GOOGLE_SCRIPT_URL || window.GOOGLE_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbz9vb8snBbwG5qxc0SXX6kXwWs9aC6s8Qdq8N4w8h8qOdTtd7ygu-NGIaMuMAOCcjOL/exec") {
       /* Muestra error */
       formMessage.textContent = "Falta configurar la URL del formulario.";
 
@@ -305,6 +315,7 @@ if (discountForm) {
     /* Arma el objeto que se enviará al backend */
     const payload = {
       name: name,
+      phone: phone,
       email: email,
       consent: consent ? "yes" : "no",
       discount: "10%",

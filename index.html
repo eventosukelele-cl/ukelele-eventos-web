@@ -40,7 +40,7 @@
     <!-- Favicon estándar. -->
     <link rel="icon" type="image/png" sizes="512x512" href="https://eventosukelele.cl/static/images/logo-512x512.png" />
     <!-- Icono para dispositivos iOS -->
-    <link rel="apple-touch-icon" href="https://eventosukelele.cl/static/images/logo-512x512.png" />
+    <link rel="apple-touch-icon" href="./static/images/logo-512x512.png" />
 
     <!-- Enlaza el archivo CSS principal -->
     <link rel="stylesheet" href="./static/css/style.css" />
@@ -96,7 +96,8 @@
             <!-- Logo clickeable que lleva al inicio -->
             <a href="#hero" class="brand" aria-label="Ir al inicio">
                 <!-- Imagen del logo -->
-                <img src="./static/images/logo-1.png" alt="Logo de Ukelele Eventos" class="brand__logo" />
+                <img src="./static/images/logo-1.png" alt="Logo de Ukelele Eventos" class="brand__logo" width="180"
+                    height="58" />
             </a>
 
             <!-- Botón hamburguesa para menú móvil -->
@@ -203,7 +204,7 @@
                     <div class="hero-card">
                         <!-- Personajes de marca -->
                         <img src="./static/images/ukelelitos-1.png" alt="Personajes ilustrados de Ukelele Eventos"
-                            class="hero-card__characters" loading="lazy" />
+                            class="hero-card__characters" width="300" height="350" loading="lazy" />
         </section>
 
         <!-- Sección de prueba social -->
@@ -488,7 +489,7 @@
                 <div class="instagram-profile reveal">
                     <!-- Avatar / logo -->
                     <div class="instagram-profile__avatar">
-                        <img src="./static/images/logo-1.png" alt="Logo de Ukelele Eventos" loading="lazy"/>
+                        <img src="./static/images/logo-1.png" alt="Logo de Ukelele Eventos" loading="lazy" />
                     </div>
 
                     <!-- Información del perfil -->
@@ -506,7 +507,7 @@
 
                 <!-- Grid de publicaciones -->
                 <div class="instagram-feed-dynamic">
-                    
+
                     <script src="https://elfsightcdn.com/platform.js" async></script>
                     <div class="elfsight-app-dafe1373-8855-4b98-8634-c43b27227094" data-elfsight-app-lazy></div>
 
@@ -516,7 +517,7 @@
                             Ver más publicaciones en Instagram
                         </a>
                     </div>
-                    
+
                 </div>
         </section>
 
@@ -553,6 +554,13 @@
                         <div class="form-group">
                             <label for="discountName">Nombre</label>
                             <input type="text" id="discountName" name="discountName" placeholder="Tu nombre" required />
+                        </div>
+
+                        <!-- Campo teléfono -->
+                        <div class="form-group">
+                            <label for="discountPhone">Teléfono / WhatsApp</label>
+                            <input type="tel" id="discountPhone" name="discountPhone" placeholder="+56 9 1234 5678"
+                                required />
                         </div>
 
                         <!-- Campo email -->
