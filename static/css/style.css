@@ -1861,14 +1861,26 @@ input {
     .service-card,
     .package-card,
     .process-card {
-        /* Cada tarjeta ocupará el 85% de la pantalla, dejando asomar la siguiente */
-        min-width: 85%;
+        /* Ocupa el 85% del ancho de la pantalla del celular */
+        width: 85vw;
 
         /* Evita que se encojan */
         flex-shrink: 0;
 
         /* El "imán" las centra perfectamente en la pantalla */
         scroll-snap-align: center;
+
+        /* Aseguramos que los textos y botones internos se ajusten y no empujen la tarjeta */
+        white-space: normal;
+        /* Permite saltos de línea normales */
+        overflow-wrap: break-word;
+        /* Rompe palabras largas si es necesario */
+
+        /* Ajuste específico para que los números no se corten en el borde */
+        .process-card {
+            padding: 32px 28px;
+            /* Aumentamos el espaciado interno izquierdo y derecho */
+        }
     }
 
     /* ========================================= */
