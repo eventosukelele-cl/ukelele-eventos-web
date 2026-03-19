@@ -387,7 +387,7 @@ function verificarDescuentoGuardado() {
 
       // Actualizamos el enlace de WhatsApp para que tenga sentido si vuelve a entrar
       if (discountWhatsappBtn) {
-        const whatsappMessage = `Hola 😊 Ya tengo mi código de descuento de la web (${FIXED_DISCOUNT_CODE}) y quiero cotizar mi evento.`;
+        const whatsappMessage = `Hola. Ya tengo mi código de descuento de la web (${FIXED_DISCOUNT_CODE}) y quiero cotizar mi evento.`;
         discountWhatsappBtn.href = `https://wa.me/56948904545?text=${encodeURIComponent(whatsappMessage)}`;
       }
     }
