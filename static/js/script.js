@@ -396,3 +396,47 @@ function verificarDescuentoGuardado() {
 
 // 6. Le decimos al navegador que ejecute esta revisión apenas termine de cargar la página
 document.addEventListener("DOMContentLoaded", verificarDescuentoGuardado);
+
+/* ====================================== */
+/* BURBUJA DE DESCUENTO FLOTANTE          */
+/* ====================================== */
+function initDiscountBubble() {
+  const bubble = document.getElementById("discountBubble");
+  const closeBtn = document.getElementById("bubbleClose");
+  const bubbleLink = document.getElementById("bubbleLink");
+  
+  /* 1. Verificamos si la burbuja existe en el HTML */
+  if (!bubble) return;
+
+  /* 2. Si el usuario ya dejó sus datos (Lead) O si ya cerró la burbuja antes, cancelamos */
+  const leadGuardado = localStorage.getItem("ukeleleLead");
+  const burbujaCerrada = sessionStorage.getItem("bubbleDismissed");
+  
+  if (leadGuardado || burbujaCerrada) {
+    return;
+  }
+
+  /* 3. Mostramos la burbuja con un pequeño retraso de 3.5 segundos para no ser invasivos */
+  setTimeout(() => {
+    bubble.hidden = false;
+  }, 3500);
+
+  /* 4. Si hace clic en la X, la cerramos y lo recordamos por esta sesión */
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      bubble.hidden = true;
+      sessionStorage.setItem("bubbleDismissed", "true");
+    });
+  }
+
+  /* 5. Si hace clic en el enlace, la ocultamos y viaja al formulario automáticamente */
+  if (bubbleLink) {
+    bubbleLink.addEventListener("click", () => {
+      bubble.hidden = true;
+      sessionStorage.setItem("bubbleDismissed", "true");
+    });
+  }
+}
+
+/* Ejecutamos la función al cargar la página */
+document.addEventListener("DOMContentLoaded", initDiscountBubble);

@@ -409,9 +409,6 @@
                 <div class="section-heading reveal">
                     <p class="eyebrow">Paquetes</p>
                     <h2>Opciones claras para decidir más rápido</h2>
-                    <p>
-                        Cuando la propuesta se entiende, la conversión respira.
-                    </p>
                 </div>
 
                 <!-- Grid de paquetes -->
@@ -421,9 +418,10 @@
                         <p class="package-card__tag">Básico</p>
                         <h3>Plan Inicio</h3>
                         <ul>
-                            <li>Animación infantil</li>
+                            <li>Animación</li>
+                            <li>Pintacaritas</li>
                             <li>Juegos grupales</li>
-                            <li>Duración 1 hora</li>
+                            <li>Duración 2 horas y 30 minutos</li>
                         </ul>
                         <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20el%20Plan%20Inicio."
                             class="btn btn--small" target="_blank" rel="noopener noreferrer">
@@ -436,10 +434,10 @@
                         <p class="package-card__tag">Más elegido</p>
                         <h3>Fiesta Completa</h3>
                         <ul>
-                            <li>Animación infantil</li>
-                            <li>Pintacaritas</li>
-                            <li>Juegos interactivos</li>
-                            <li>Duración 2 horas</li>
+                            <li>Animación + Pintacaritas (Máx. 20 niños)</li>
+                            <li>Máquina de Algodón de Azúcar (ilimitado)</li>
+                            <li>Máquina de Pop Corn (ilimitado)</li>
+                            <li>Duración extendida: 3 horas</li>
                         </ul>
                         <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20el%20paquete%20Fiesta%20Completa."
                             class="btn btn--light btn--small" target="_blank" rel="noopener noreferrer">
@@ -452,10 +450,10 @@
                         <p class="package-card__tag">Premium</p>
                         <h3>Experiencia Total</h3>
                         <ul>
-                            <li>Animación completa</li>
-                            <li>Pintacaritas profesional</li>
-                            <li>Taller creativo</li>
-                            <li>Estación de snacks</li>
+                            <li>Pack Animación + Pintacaritas (Máx. 20 niños)</li>
+                            <li>50 Completos</li>
+                            <li>50 porciones de Papas Fritas crujientes servidas al momento.</li>
+                            <li>Duración extendida: 3 horas</li>
                         </ul>
                         <a href="https://wa.me/56948904545?text=Hola,%20quiero%20cotizar%20el%20paquete%20Experiencia%20Total."
                             class="btn btn--small" target="_blank" rel="noopener noreferrer">
@@ -734,6 +732,19 @@
 
         <!-- Imagen que se mostrará ampliada -->
         <img id="lightboxImage" src="" alt="Imagen ampliada" loading="lazy" />
+    </div>
+
+    <!-- Burbuja de descuento -->
+    <div class="discount-bubble" id="discountBubble" hidden>
+        <button class="discount-bubble__close" id="bubbleClose" aria-label="Cerrar alerta">×</button>
+        <div class="discount-bubble__content">
+            <div class="discount-bubble__badge">%</div>
+            <div class="discount-bubble__text">
+                <strong>¡10% de descuento!</strong>
+                <p>Aprovecha este beneficio para tu evento.</p>
+                <a href="#descuento" class="discount-bubble__link" id="bubbleLink">Obtener descuento</a>
+            </div>
+        </div>
     </div>
 
     <!-- Script principal del sitio -->
